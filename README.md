@@ -1,24 +1,24 @@
-<div align="center">
-
-# PointSav Technical Library | Biblioteca Técnica
-### *The Sovereign Knowledge Store*
-**Vancouver | New York | Berlin**
-
-[ **System Source** ](https://github.com/pointsav/pointsav-monorepo) | [ **Operations** ](https://github.com/woodfine/fleet-deployment-manifest) | [ **Identity** ](https://github.com/pointsav)
-
-</div>
-
+---
+topic_id: INDEX-01
+title: PointSav Technical Library | Knowledge Centre
+tier: Tier-6-System
+category: Interface
+tags: [index, knowledge-hub, portal, matrix]
+abstract: |
+  The functional interface for the PointSav Sovereign Knowledge Store. 
+  Provides direct navigational links to all Tier-indexed topics.
 ---
 
-## 📚 Overview
-This repository serves as the centralized **Sovereign Knowledge Store** for PointSav Digital Systems. It contains the technical manuals, governance protocols, and architectural specifications required to maintain the Foundry.
+## **🏛️ Sovereign Knowledge Matrix**
 
-## 📑 Core Documentation
-| File | Description | Audience |
+| Tier | Institutional Role | Primary Topics (YAML) |
 | :--- | :--- | :--- |
-| **[SOVEREIGN_WORKFLOW.md](./SOVEREIGN_WORKFLOW.md)** | The Air-Gap, Matrix, and Staging Cycle protocols. | Developers / Ops |
-| **ARCHITECTURE.md** | Deep dive into the Six-Tier Taxonomy and seL4 integration. | Architects |
-| **GLOSSARY.md** | Institutional Nomenclature (e.g., Totebox, Harvester). | All |
+| **Tier 6: System** | **Foundation** | [Glossary](./SYS-GLOS-01.yaml) • [Architecture](./SYS-ARCH-01.yaml) • [Core Manager](./SYS-CORE-01.yaml) |
+| **Tier 6: System** | **Security** | [Diode Standard](./SYS-SEC-01.yaml) • [Machine-Auth](./SYS-SEC-02.yaml) |
+| **Tier 5: Service** | **Governance** | [Sovereign Workflow](./OPS-WORK-01.yaml) |
+| **Tier 5: Service** | **Logic** | [Content Engine](./SERVICE-CONTENT-01.yaml) • [People Engine](./SERVICE-PEOPLE-01.yaml) • [Email Bridge](./SERVICE-EMAIL-01.yaml) |
+| **Tier 4: OS** | **Engines** | [Private Network](./PPN-01.yaml) • [Totebox-OS](./TOTEBOX-01.yaml) • [Boot Specs](./SYS-BOOT-01.yaml) |
+| **Tier 3: Moonshot**| **R&D** | [Sovereign Roadmap](./MOON-01.yaml) |
 
 ---
-*© 2026 PointSav Digital Systems AG. Documentation is verified via PointSav-Logic.*
+*Verified by the Sovereign Foundry.*
