@@ -1,16 +1,24 @@
-# Documentation Hub | Centro de Documentación
-**Technical Reference & Architectural Proofs**
+<div align="center">
 
-## 📚 Knowledge Base | Base de Conocimiento
-This repository serves as the upstream source for the **Mediakit-OS Knowledge Engine**.
+# PointSav Technical Library | Biblioteca Técnica
+### *The Sovereign Knowledge Store*
+**Vancouver | New York | Berlin**
 
-Este repositorio sirve como fuente principal para el **Motor de Conocimiento Mediakit-OS**.
+[ **System Source** ](https://github.com/pointsav/pointsav-monorepo) | [ **Operations** ](https://github.com/woodfine/fleet-deployment-manifest) | [ **Identity** ](https://github.com/pointsav)
 
-### 🧠 Core Topics | Temas Centrales
+</div>
 
-| Topic | Description |
-| :--- | :--- |
-| **[/architecture](./architecture)** | **Six-Tier Logic.** Explaining the Monorepo structure. |
-| **[/security](./security)** | **Verification.** seL4 proofs and capability manifests. |
-| **[/hardware](./hardware)** | **HAL Targets.** Support for iMac 12.1 and x86_64. |
-| **[/api](./api)** | **Crate Reference.** Generated Rust documentation. |
+---
+
+## 📚 Overview
+This repository serves as the centralized **Sovereign Knowledge Store** for PointSav Digital Systems. It contains the technical manuals, governance protocols, and architectural specifications required to maintain the Foundry.
+
+## 📑 Core Documentation
+| File | Description | Audience |
+| :--- | :--- | :--- |
+| **[SOVEREIGN_WORKFLOW.md](./SOVEREIGN_WORKFLOW.md)** | The Air-Gap, Matrix, and Staging Cycle protocols. | Developers / Ops |
+| **ARCHITECTURE.md** | Deep dive into the Six-Tier Taxonomy and seL4 integration. | Architects |
+| **GLOSSARY.md** | Institutional Nomenclature (e.g., Totebox, Harvester). | All |
+
+---
+*© 2026 PointSav Digital Systems AG. Documentation is verified via PointSav-Logic.*
