@@ -1,0 +1,20 @@
+topic_id: SYS-ARCH-01
+title: Software Architecture & The 3-Layer Stack
+tier: Tier-6-System
+category: Foundation
+tags: [architecture, sel4, monorepo, 3-layer-stack, vertical-adapter]
+abstract: |
+  Defines the seL4 Foundation (Layers 0-3) and the commercial 3-Layer Stack.
+  Replaces generic OS layers with a custom Capability-Based Manager in no_std Rust.
+details:
+  sel4_foundation:
+    layer_0: system-substrate (Kernel) - Mathematically verified seL4/C core.
+    layer_1: system-foundation (Root-Task) - Proprietary Rust no_std hardware manager.
+    layer_1b: system-network-interface (Vertical Adapter) - Decouples networking from the core stack.
+    layer_2: system-security (Capability Manager) - Proprietary Rust monitor.
+    layer_3: os-guest (Guest OS) - Isolated Protection Domains (PDs).
+  commercial_stack:
+    infrastructure: os-infrastructure (lightweight hypervisor), os-network-admin.
+    platform: os-totebox (core micro-kernel), os-interface, os-mediakit, os-privategit.
+    delivery: os-workplace (Type I bare-metal), os-console (Type II hosted window).
+links: [SYS-GLOS-01, PPN-01, SYS-CORE-01]

@@ -1,0 +1,18 @@
+topic_id: SYS-ADR-03
+title: Silicon-Pinned ISO Architecture
+tier: Tier-4-OS
+category: Infrastructure-Provisioning
+tags: [adr, iso, silicon-pinned, determinism, drivers]
+abstract: |
+  Decision record to compile strict Silicon-Pinned ISOs for bare-metal nodes,
+  eliminating generic driver bloat and ensuring absolute determinism.
+details:
+  os_infrastructure:
+    target: Intel Core 2 Duo P8600 / Broadcom BCM4322 (Node 1 - Muscle).
+  os_network_admin:
+    target: Intel i5-2400S / Broadcom BCM57765 (Node 3 - Brain).
+  consequences:
+    advantage: Zero driver bloat. Tuned to exact memory boundaries.
+    limitation: ISOs kernel-panic if booted on unauthorized silicon.
+    future_proofing: Re-compilation via updated system-substrate profiles.
+links: [PPN-01, SYS-BOOT-01, SYS-ARCH-01]

@@ -1,0 +1,18 @@
+topic_id: PPN-01
+title: PointSav Private Network (PPN)
+tier: Tier-4-OS
+category: Infrastructure
+tags: [mesh, hypervisor, virtualization, cloud-agnostic, virtio]
+abstract: |
+  Physical/virtual mesh for scaling a Totebox Orchestration.
+  Acts as a lightweight, stateless hypervisor on any hardware, decoupling 
+  the Logic from the Metal via the system-network-interface adapter.
+details:
+  mesh_topology:
+    node_1_muscle: Laptop B. Bare-metal os-infrastructure executing heavy payload VMs.
+    node_2_relay: Google Cloud Platform (GCP). Virtualized os-infrastructure on e2-micro. Acts as the static IP anchor.
+    node_3_brain: iMac 12.1. Virtualized os-network-admin (KVM) managing cryptographic capabilities.
+  vertical_adapter_spine:
+    concept: The system-network-interface abstracts the physical metal.
+    routing: OS engines talk to the interface; the interface routes to either vendor-virtio (VMs) or system-substrate (Bare-metal).
+links: [TOTEBOX-01, SYS-BOOT-01, SYS-ARCH-01]

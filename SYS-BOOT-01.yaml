@@ -1,0 +1,24 @@
+topic_id: SYS-BOOT-01
+title: OS Boot Specifications & Hardware Forensics
+tier: Tier-4-OS
+category: Infrastructure-Provisioning
+tags: [boot, flash, infrastructure-os, network-admin-os, qemu, grub]
+abstract: |
+  Technical profiles for the 3-Node Mesh hardware. Defines the mandatory GRUB 
+  Multiboot2 translation layer and specific silicon boundaries for bare-metal targets.
+details:
+  bootloader_constraints:
+    qemu_direct: QEMU '-kernel' flag natively supports 32-bit Multiboot 1 only.
+    sel4_requirement: 64-bit seL4 kernels strictly require Multiboot 2.
+    resolution: GRUB payload generation is mandatory to bridge 32-bit boot to 64-bit OS.
+    entry_point: verified seL4 boot boundary located at physical address 0x1002a3.
+  hardware_profiles:
+    imac_12_1_command: 
+      cpu: Intel Core i5-2400S (Sandy Bridge). Requires legacy MSR / Nehalem flags.
+      network: Broadcom BCM57765 [14e4:16b4].
+      virtualization: VT-x active. VT-d (IOMMU) disabled by Apple firmware. 
+      bridge: Requires vendor-virtio vertical adapter via KVM.
+    laptop_b_muscle:
+      role: fleet-infrastructure-onprem.
+      status: Provisioning for direct system-substrate drivers.
+links: [PPN-01, SYS-SEC-02]
