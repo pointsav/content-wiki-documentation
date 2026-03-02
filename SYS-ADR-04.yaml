@@ -1,0 +1,18 @@
+topic_id: SYS-ADR-04
+title: ADR: The Showcase Shim (VirtIO over FreeBSD)
+tier: Tier-4-OS
+category: Infrastructure-Provisioning
+tags: [adr, showcase, lionsos, freebsd, virtio, bhyve]
+abstract: |
+  Decision record establishing the "Showcase Architecture" for Laptop B. 
+  Due to the absence of VT-d (IOMMU) on the Intel P8600, a minimal FreeBSD 
+  Shim OS is deployed on bare-metal to handle Broadcom Wi-Fi and ACPI sleep states.
+details:
+  rationale: 
+    - Bypasses multi-month driver development for legacy silicon.
+    - Allows immediate deployment of LionsOS/seL4 in a nested VirtIO environment.
+  architecture:
+    layer_0_metal: system-substrate-freebsd (Host OS / Hardware Abstraction)
+    layer_1_bridge: vendor-virtio (bhyve Hypervisor Networking)
+    layer_2_payload: moonshot-sel4-core + LionsOS (Guest OS / Routing Logic)
+links: [PPN-01, SYS-ARCH-01, fleet-infrastructure-leased]

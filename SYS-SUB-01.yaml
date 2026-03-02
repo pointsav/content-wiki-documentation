@@ -1,0 +1,10 @@
+topic_id: SYS-SUB-01
+title: system-substrate-freebsd: Sovereign Driver Domain
+tier: Tier-6-System
+category: Foundation
+tags: [bsd-permissive, drivers, broadcom, ownership]
+abstract: |
+  The BSD-licensed foundation providing battle-tested hardware 
+  support. Replaces vendor-linux to ensure 100% legal and 
+  architectural sovereignty over the driver substrate.
+links: [SYS-ARCH-01, SYS-CORE-01]

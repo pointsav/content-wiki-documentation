@@ -1,0 +1,10 @@
+topic_id: OS-INFRA-01
+title: os-infrastructure: Edge & Cloud Relays
+tier: Tier-4-OS
+category: Infrastructure
+tags: [freebsd, headless, acpi-bypass, hypervisor]
+abstract: |
+  The lightweight execution environment for PPN nodes. Deployed on 
+  Laptop B (Edge) and Google Cloud (Anchor). Features mandatory 
+  ACPI lid-switch overrides for continuous headless operation.
+links: [PPN-01, SYS-BOOT-01]

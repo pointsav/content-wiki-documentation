@@ -1,0 +1,10 @@
+topic_id: MOON-VMM-01
+title: moonshot-sel4-vmm: Trustworthy Hypervisor
+tier: Tier-3-Moonshot
+category: R&D
+tags: [sel4, rust, vmm, iommu, isolation]
+abstract: |
+  The long-term goal of sliding a formally verified seL4 kernel 
+  underneath the FreeBSD driver domain using a custom Rust-based 
+  Virtual Machine Monitor (VMM).
+links: [MOON-01, SYS-CORE-01]
