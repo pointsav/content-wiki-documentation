@@ -1,0 +1,19 @@
+topic_id: OS-WORKPLACE-01
+title: Track 3 - Sovereign Desktop & Deterministic Files
+tier: Tier-4-OS
+category: System-Architecture
+tags: [workplace, deterministic-files, maildir, non-saas, desktop]
+abstract: |
+  The Sovereign Desktop provides the human interface for the Digital First enterprise. It enforces a Deterministic File Architecture to guarantee structural sovereignty and enable direct machine readability.
+details:
+  human_narrative: |
+    To achieve complete structural sovereignty, we reject the legacy model of hiding user data inside proprietary, multi-tenant databases. The Sovereign Desktop runs dedicated applications that save output exclusively as structured, machine-readable files. When a user drafts a document, creates a spreadsheet, or sends a communication, the output is stored locally as Markdown, CSV, or Maildir.
+  darp_compliance: |
+    Because output exists as distinct, identifiable files, an entire operational history can be cryptographically hashed, copied, and physically transferred to an owner, guaranteeing DARP compliance.
+  machine_readability: |
+    Authorized AI and verification engines can read the exact state of the company directly from the file system without requiring external API translations.
+  workplace_applications:
+    app_workplace_editor: Handles text, spreadsheets, and presentations using flat formats (YAML, Markdown, CSV).
+    app_workplace_cad: Handles technical drawings and BIM outputting to structured vectors.
+    app_workplace_comm: Handles asynchronous communication using the Maildir standard.
+links: [SYS-STRAT-01, SYS-CONTRACTS-01]
