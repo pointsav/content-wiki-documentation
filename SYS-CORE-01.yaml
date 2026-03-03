@@ -2,8 +2,20 @@ topic_id: SYS-CORE-01
 title: PointSav Capability-Based Manager (CBM)
 tier: Tier-6-System
 category: Foundation
-tags: [sel4, rust, no_std, capability-management]
+tags: [sel4, rust, no_std, capability-management, fault-tolerance]
 abstract: |
   The core Rust no_std Root-Task (< 5k LOC) replacing generic OS layers. 
-  Abstracts seL4 system calls into safe Rust hardware capabilities.
+  Abstracts seL4 system calls into safe Rust hardware capabilities and enforces 
+  autonomous fault tolerance via a multi-domain microkernel architecture.
+details:
+  architecture:
+    muscle_domain: The primary initialization and hardware management domain. Continuously asserts operational state.
+    watchdog_domain: A secondary, isolated domain operating at a lower scheduler priority. Enforces recovery protocols.
+  telemetry_plane:
+    memory_map: Shared memory segment (telemetry_shared) mapped to virtual address 0x4000000.
+    heartbeat: Byte 0. A flatline (0x00) triggers immediate capability routing for a software reset.
+    crash_counter: Byte 1. Persistent execution counter tracking stability metrics across failure events.
+  abi_compliance:
+    capability_routing: seL4 Notification Channels (Channel 10) execute resets securely.
+    c_wrapper_bridge: Native C-Wrapper (notify.c) ensures Rust logic interfaces correctly with dynamically assigned capability IDs without insecure inline assembly.
 links: [SYS-ARCH-01, SYS-SEC-01]

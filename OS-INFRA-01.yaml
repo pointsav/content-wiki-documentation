@@ -2,9 +2,17 @@ topic_id: OS-INFRA-01
 title: os-infrastructure: Edge & Cloud Relays
 tier: Tier-4-OS
 category: Infrastructure
-tags: [freebsd, headless, acpi-bypass, hypervisor]
+tags: [freebsd, headless, hypervisor, multiboot2, orchestration]
 abstract: |
-  The lightweight execution environment for PPN nodes. Deployed on 
-  Laptop B (Edge) and Google Cloud (Anchor). Features mandatory 
-  ACPI lid-switch overrides for continuous headless operation.
-links: [PPN-01, SYS-BOOT-01]
+  The lightweight execution environment for PPN nodes. Deployed on Laptop B (Edge) 
+  and Google Cloud (Anchor). Functions as the delivery vehicle for packaging the 
+  compiled Capability-Based Manager (system-security) into a deployable ISO.
+details:
+  build_orchestration:
+    elf_synthesis: Ingests the final_image.elf synthesized by the Tier-6 system-security component.
+    bootloader_wrapping: Utilizes GRUB with Multiboot2 compliance for x86_64 architecture support.
+    payload_sequence: The verified seL4 microkernel is loaded as the primary payload; the system-security initializer is loaded as a Multiboot module.
+  deployment_targets:
+    bare_metal: Direct execution on silicon possessing compliant IOMMU (VT-d) capabilities.
+    virtio_shim: Execution within a vendor-virtio bridge atop system-substrate-freebsd for legacy silicon or cloud instances.
+links: [PPN-01, SYS-BOOT-01, SYS-ADR-04]
