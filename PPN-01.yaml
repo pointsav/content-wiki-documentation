@@ -1,18 +1,19 @@
 topic_id: PPN-01
-title: PointSav Private Network (PPN)
+title: PointSav Private Network (PPN) - Production Iteration 1
 tier: Tier-4-OS
 category: Infrastructure
-tags: [mesh, hypervisor, virtualization, cloud-agnostic, virtio]
+tags: [mesh, psst, routing, relay, wireguard-substrate]
 abstract: |
-  Physical/virtual mesh for scaling a Totebox Orchestration.
-  Acts as a lightweight, stateless hypervisor on any hardware, decoupling 
-  the Logic from the Metal via the system-network-interface adapter.
+  A 3-node cryptographically fused mesh. The PPN utilizes a hub-and-spoke 
+  topology where Node 2 (GCP) acts as the static discovery anchor for 
+  Node 1 (Leased) and Node 3 (iMac).
 details:
-  mesh_topology:
-    node_1_muscle: Laptop B. Bare-metal os-infrastructure executing heavy payload VMs.
-    node_2_relay: Google Cloud Platform (GCP). Virtualized os-infrastructure on e2-micro. Acts as the static IP anchor.
-    node_3_brain: iMac 12.1. Virtualized os-network-admin (KVM) managing cryptographic capabilities.
-  vertical_adapter_spine:
-    concept: The system-network-interface abstracts the physical metal.
-    routing: OS engines talk to the interface; the interface routes to either vendor-virtio (VMs) or system-substrate (Bare-metal).
-links: [TOTEBOX-01, SYS-BOOT-01, SYS-ARCH-01]
+  routing_matrix:
+    hub: Node 2 (GCP Relay). Static IP for global discovery.
+    spoke_1: Node 1 (Leased). Dynamic IP behind NAT. Initiates outbound to Hub.
+    spoke_2: Node 3 (iMac). Dynamic IP. Initiates outbound to Hub.
+  security_protocol:
+    tunnel: PointSav Secure Tunnel (PSST).
+    encryption: ChaCha20-Poly1305 (WireGuard-based substrate).
+    authorization: Machine-Based Authorization (MBA) keys physically pinned to silicon.
+links: [OS-INFRA-01, SYS-SEC-02, route-network-admin]

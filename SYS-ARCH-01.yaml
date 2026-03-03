@@ -1,20 +1,16 @@
 topic_id: SYS-ARCH-01
-title: Software Architecture & The 3-Layer Stack
+title: Software Architecture & The Isolation Boundary
 tier: Tier-6-System
 category: Foundation
-tags: [architecture, sel4, monorepo, 3-layer-stack, vertical-adapter]
+tags: [architecture, sel4, cloud-blind, isolation]
 abstract: |
-  Defines the seL4 Foundation (Layers 0-3) and the commercial 3-Layer Stack.
-  Replaces generic OS layers with a custom Capability-Based Manager in no_std Rust.
+  Defines the absolute separation between the network routing infrastructure 
+  and the software payloads. This guarantees hardware independence and data sovereignty.
 details:
-  sel4_foundation:
-    layer_0: system-substrate (Kernel) - Mathematically verified seL4/C core.
-    layer_1: system-foundation (Root-Task) - Proprietary Rust no_std hardware manager.
-    layer_1b: system-network-interface (Vertical Adapter) - Decouples networking from the core stack.
-    layer_2: system-security (Capability Manager) - Proprietary Rust monitor.
-    layer_3: os-guest (Guest OS) - Isolated Protection Domains (PDs).
-  commercial_stack:
-    infrastructure: os-infrastructure (lightweight hypervisor), os-network-admin.
-    platform: os-totebox (core micro-kernel), os-interface, os-mediakit, os-privategit.
-    delivery: os-workplace (Type I bare-metal), os-console (Type II hosted window).
-links: [SYS-GLOS-01, PPN-01, SYS-CORE-01]
+  layer_a_infrastructure:
+    components: os-infrastructure, os-network-admin, PointSav Private Network (PPN).
+    role: "The network routing and virtualization foundation. It securely moves data between physical locations (e.g., AWS, GCP, On-Premise) but has zero visibility into the data itself."
+  layer_b_payload:
+    components: os-console, os-interface, os-totebox, app-console-keys, app-interface-command.
+    role: "The 'Cloud-Blind' operating environments. These components execute business logic and store data. They cannot access the network routing layer and are unaware of their physical hosting location."
+links: [SYS-GLOS-01, PPN-01]

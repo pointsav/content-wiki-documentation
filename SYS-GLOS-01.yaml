@@ -2,8 +2,16 @@ topic_id: SYS-GLOS-01
 title: Institutional Glossary & Nomenclature Lock
 tier: Tier-6-System
 category: Foundation
-tags: [nomenclature, factory, fleet, taxonomy]
+tags: [nomenclature, taxonomy, cloud-blind, f-keys, orchestration]
 abstract: |
   The definitive source of truth for all PointSav immutable terms. 
-  Establishes the Six-Tier Taxonomy and nomenclature lock for all assets.
+  Establishes the Six-Tier Taxonomy and standardizes the language for external review.
+details:
+  core_concepts:
+    Cloud_Blind_Execution: 
+      definition: "The architectural guarantee that payload software (Layer B) operates without any knowledge of the underlying physical hardware or network (Layer A). A Totebox functions identically whether hosted on an on-premise server, AWS, or GCP."
+    F_Keys:
+      definition: "The physical Function Keys on an operator's keyboard, utilized within the administrative dashboard to seamlessly cycle through active Totebox services."
+    Totebox_Orchestration:
+      definition: "The arrangement of secure data environments. A 'Standalone' orchestration connects one console directly to one Totebox. An 'Aggregated' orchestration connects one console to a gateway, which manages multiple distinct Toteboxes."
 links: [SYS-ARCH-01, OPS-WORK-01]
