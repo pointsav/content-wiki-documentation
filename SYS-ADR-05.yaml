@@ -1,0 +1,21 @@
+topic_id: SYS-ADR-05
+title: ADR: Stateless Presentation vs. Stateful Storage (The RAG Pipeline)
+tier: Tier-6-System
+category: System-Architecture
+tags: [adr, stateless, stateful, os-mediakit, os-totebox, service-content, rag, ai]
+abstract: |
+  Decision record establishing the absolute architectural boundary between compute logic (Engines) and data persistence (Vaults) to guarantee DARP compliance and enable secure AI integration.
+details:
+  rationale: |
+    Legacy SaaS applications merge databases, web servers, and business logic into monolithic structures, creating data lock-in and security vulnerabilities. To achieve structural ownership, PointSav strictly decouples these layers. 
+  the_stateful_layer:
+    component: os-totebox
+    role: "The persistent hard drive. It holds the decentralized `content-wiki-*` repositories as plain-text files. It performs no logic."
+  the_stateless_layers:
+    component_1: os-mediakit
+    role: "The presentation engine. It has zero memory. It connects to an `os-totebox`, parses YAML frontmatter, and renders public files to the web. If destroyed, zero data is lost."
+    component_2: service-content
+    role: "The linguistic compiler. It has zero memory. It acts as the Retrieval-Augmented Generation (RAG) pipeline, pulling data from an `os-totebox`, synthesizing it (optionally via AI API), and writing the result back to the `os-totebox`."
+  ai_integration_posture: |
+    Artificial Intelligence is classified strictly as a linguistic processor, not a data repository. It is utilized exclusively within the `service-content` execution loop. Proprietary corporate data is never utilized to train external foundational models; it is only packaged as temporary, transient context for specific document generation.
+links: [SYS-STRAT-01, SERVICE-CONTENT-01, TOTEBOX-01]
