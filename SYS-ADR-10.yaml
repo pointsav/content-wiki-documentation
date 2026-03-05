@@ -1,0 +1,10 @@
+topic_id: SYS-ADR-10
+title: "Sovereign AI Routing & Cryptographic Inheritance"
+tier: Tier-5-Service
+category: Service-Logic
+tags: [ai, service-llm, slm, prompt-injection, totebox]
+abstract: |
+  Restrict AI processing to the application layer (service-LLM) using an SLM-Default, LLM-Fallback architecture to guarantee the seL4 microkernel remains isolated from prompt injections.
+details:
+  decision: "AI operates in a restricted user-space sandbox, temporarily inheriting the human operator's Machine-Based Authorization (MBA) key. A local Small Language Model (SLM) sanitizes PII prior to any external cloud compilation."
+links: [SERVICE-CONTENT-01, SYS-CORE-01]

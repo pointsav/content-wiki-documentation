@@ -1,0 +1,10 @@
+topic_id: SYS-ADR-11
+title: "The Stateless Compiler & 4-Node Isolation"
+tier: Tier-6-System
+category: System-Architecture
+tags: [compiler, service-content, os-mediakit, air-gap]
+abstract: |
+  Enforce a strict 4-Node Sovereign Isolation Matrix. Isolate the active document generation engine (service-content) from the permanent public presentation layers (content-wiki-*).
+details:
+  decision: "Data never flows automatically. A human operator must manually verify outputs in the isolated /outbox/ and execute the cryptographic foundry_sync to transfer files across the air gap."
+links: [SYS-STRAT-01, OPS-WORK-01]

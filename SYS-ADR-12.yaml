@@ -1,0 +1,10 @@
+topic_id: SYS-ADR-12
+title: "Payload-Agnostic Flat-File Ledgers"
+tier: Tier-4-OS
+category: System-Architecture
+tags: [flat-file, database, yaml, zero-execution]
+abstract: |
+  Reject opaque traditional SQL databases to maintain DARP compliance. Utilize a payload-agnostic flat-file ledger architecture accepting any file extension as an inert binary blob.
+details:
+  decision: "Original assets (.docx, .xlsx, .pdf) are stored in /assets/ with execution permissions strictly stripped by the kernel. Deterministic metadata and cryptographic checksums are stored as .yaml pointers in /ledger/."
+links: [OS-WORKPLACE-01, SYS-CONTRACTS-01]

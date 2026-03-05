@@ -1,0 +1,10 @@
+topic_id: SYS-ADR-09
+title: "The Ephemeral Endpoint Doctrine"
+tier: Tier-4-OS
+category: System-Architecture
+tags: [ephemeral, os-workplace, export, sync, diode-standard]
+abstract: |
+  Physical hardware operating the os-workplace track are classified as Ephemeral Endpoints. The architecture strictly prohibits continuous background cloud synchronization.
+details:
+  decision: "Endpoints rely on the app-workplace-export utility for deterministic exports to physical media, dividing payloads into workplace_state.yaml and workplace_files.tar.gz."
+links: [OS-WORKPLACE-01, SYS-SEC-01]
