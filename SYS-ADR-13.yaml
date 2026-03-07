@@ -2,44 +2,20 @@ topic_id: SYS-ADR-13
 title: "ADR: Federated Vault Architecture & Domain-Driven Templates"
 tier: Tier-4-OS
 category: System-Architecture
-tags: [domain-driven-design, vault-federation, service-study, totebox-orchestration, stateless-compilation]
+tags: [domain-driven-design, vault-federation, service-study, totebox-orchestration, stateless-compilation, content-decoupling]
 abstract: |
-  Establish federated micro-silos for Totebox Orchestration. Decouple templates from the global design system and localize them within specific operational vaults to support domain-driven design, SOC 3 record-keeping, and iterative exploration.
+  Establish federated micro-silos for Totebox Orchestration. Decouple templates from the global design system and localize them within specific operational vaults to support domain-driven design, SOC 3 record-keeping, and iterative exploration. Enforce strict Content Decoupling for 1:1 linguistic mapping.
 details:
   pillar_1_chart_of_accounts:
     mandate: "app-console-input must route ingested files into distinct operational vaults (e.g., service-bookkeeper, service-study) based on a defined Chart of Accounts string, generating the necessary /assets and /ledger dual-files."
   pillar_2_study_paradigm:
-    mandate: "service-study functions as an ephemeral architectural sandbox. It supports nested projects (e.g., /website-2026/), each containing localized /assets, /ledger, and /templates directories for isolated iteration."
+    mandate: "service-study functions as an ephemeral architectural sandbox. It supports nested projects (e.g., /website-design/), each containing localized /assets, /content, /ledger, and /templates directories for isolated iteration."
   pillar_3_template_localization:
     mandate: "Structural templates (e.g., financial ledgers, email skeletons) are domain-specific. They must physically reside within the /templates/ directory of their respective vault, not in the global pointsav-design-system."
-  pillar_4_donor_to_outbox_lifecycle:
-    mandate: "The service-content engine is strictly stateless. It ingests 'Donor' documents and local templates, synthesizes the artifact, and ejects it to the local /outbox/. It is mathematically forbidden from writing directly to a vault. Human operators must formally commit outbox artifacts via app-console-input."
-  pillar_5_relational_exception:
+  pillar_4_content_decoupling:
+    mandate: "Enforce the State-Asset Distinction. 1:1 linguistic copy (Markdown/Text) must reside in /content/. Inert media and raw drafts must reside in /assets/. The service-content engine merges these into the HTML skeletons found in /templates/."
+  pillar_5_donor_to_outbox_lifecycle:
+    mandate: "The service-content engine is strictly stateless. It ingests 'Donor' documents and local templates, synthesizes the artifact, and ejects it to the local /outbox/. It is mathematically forbidden from writing directly to a vault."
+  pillar_6_relational_exception:
     mandate: "Services requiring complex querying or managing mutable PII (e.g., service-people) are exempt from the flat-file ledger architecture. These require a dedicated, Zero-Trust relational database isolated within their own Totebox."
-  pillar_6_glossary_anchor:
-    mandate: "The Institutional Glossary (corporate, projects, documentation domains) remains anchored to service-content to provide universal, cross-vault linguistic enforcement."
-  structural_map: |
-    [source-control-anchor]/            <-- (e.g., os-privategit, pointsav-design-system)
-    └── tokens/
-        ├── color.yaml                  <-- (Visual Tokens)
-        └── linguistic/                 <-- (Linguistic Tokens: EXTRACT, DESIGN, MEMO)
-
-    cluster-totebox-[domain]/           <-- (The Execution Environment)
-    ├── service-[vault]/                <-- (e.g., service-study, service-bookkeeper)
-    │   ├── assets/                     <-- (Inert Legacy Binaries | SYS-ADR-12)
-    │   ├── ledger/                     <-- (YAML Pointers & Metadata | SYS-ADR-12)
-    │   └── templates/                  <-- (Domain-Driven HTML & UI Skeletons | SYS-ADR-13)
-    │
-    ├── service-[relational-vault]/     <-- (e.g., service-people | Pillar 5)
-    │   ├── database/                   <-- (Zero-Trust Relational DB: SQLite/PostgreSQL)
-    │   ├── src/                        <-- (Rust Execution Logic)
-    │   └── Cargo.toml
-    │
-    ├── service-content/                <-- (Stateless Linguistic Compiler)
-    │   ├── domains/                    <-- (Institutional Glossaries: Corporate, Projects, Docs | Pillar 6)
-    │   ├── src/                        <-- (Rust no_std Execution Logic)
-    │   └── Cargo.toml
-    │
-    └── outbox/                         <-- (Stateless Egress)
-        └── ARTIFACT_TIMESTAMP.ext      <-- (Air-gap retrieval target)
 links: [SYS-ADR-12, OS-WORKPLACE-01, app-console-input, service-content]

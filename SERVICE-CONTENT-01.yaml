@@ -1,5 +1,5 @@
 topic_id: SERVICE-CONTENT-01
-title: service-content: Asset & Knowledge Synthesis
+title: "service-content: Asset & Knowledge Synthesis"
 tier: Tier-5-Service
 category: Service-Logic
 tags: [synthesis, legal, memo, comm, translate, totebox-orchestration, template-injection]
@@ -21,7 +21,7 @@ details:
       subject_line_logic: "[Project Name] — [lowercase status] [Title Case Document]"
     ENGINE_TRANSLATE: Manages cross-language parity and Spanish Glossary logic.
   compilation_mechanics:
-    phase_1_ingestion: "Mount donor documents from /service-study/."
+    phase_1_ingestion: "Mount inert media from /assets/ and strictly mapped 1:1 linguistic payloads from /content/ within the target service-study nested sandbox."
     phase_2_synthesis: "LLM extracts linguistics and formats as JSON payload."
-    phase_3_injection: "Rust engine deterministically injects JSON into immutable HTML templates."
+    phase_3_injection: "Rust engine deterministically injects JSON and media paths into immutable HTML templates retrieved from /templates/."
 links: [TOTEBOX-01, SYS-GLOS-01, protocol-design.yaml]
