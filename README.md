@@ -37,7 +37,7 @@ Below is the active ledger of documented topologies. Select a topic to view its 
 * **The Physics:** A microkernel abstraction replacing traditional operating systems. It enforces a strict one-way command flow to isolate Edge Delivery networks from secure vaults.
 
 ### 🧠 5. Sovereign AI Routing (SYS-AI-01)
-**[➔ READ FULL TOPIC: Sovereign AI Routing](./topic-sovereign-ai-routing.md)**
+**[➔ READ FULL TOPIC: Sovereign AI Routing](./topic-service-slm.md)**
 * **The Concept:** Linguistic Air-Lock.
 * **The Physics:** A physical checkpoint utilizing a local Small Language Model (SLM) to sanitize and anonymize corporate data before external hyperscaler processing.
 
