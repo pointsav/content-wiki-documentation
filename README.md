@@ -1,59 +1,36 @@
-# 📚 CONTENT WIKI: THE KNOWLEDGE GRAPH
-**Curator:** PointSav Digital Systems™ & Woodfine Management Corp.
-**Objective:** Institutional Technical Documentation & Education
+# Technical Library & Knowledge Centre | Biblioteca Técnica
+**PointSav Digital Systems™ | Institutional Index**
+
+> **OPERATIONAL POSTURE [MARCH 2026]:**
+> **Phase:** Production Iteration 1
+> **Focus:** 3-Track System integration and Tier-6 Contract formalization.
+> **Estado:** Transición a componentes en Rust con seguridad de memoria.
+
+This repository serves as the definitive index for all architectural decisions and system specifications governing the PointSav Sovereign Network.
+
+## Sovereign Knowledge Matrix
+
+### Track 1: Infrastructure & Foundation
+| Document ID | Title | Tier | Description |
+| :--- | :--- | :--- | :--- |
+| **SYS-STRAT-01** | [The Digital First Paradigm](./SYS-STRAT-01.yaml) | Tier 6 | 3-Track architecture mapping. |
+| **SYS-CONTRACTS-01**| [Mathematical Compliance](./SYS-CONTRACTS-01.yaml) | Tier 6 | The Six Orchestration Contracts enforcing SOC 3 and DARP. |
+| **SYS-ARCH-01** | [Software Architecture](./SYS-ARCH-01.yaml) | Tier 6 | Defines the seL4 Foundation. |
+| **SYS-CORE-01** | [Capability-Based Manager](./SYS-CORE-01.yaml) | Tier 6 | Core Rust Root-Task. |
+| **PPN-01** | [Private Network](./PPN-01.yaml) | Tier 4 | Physical and virtual mesh topology. |
+
+### Track 2: Totebox Orchestration
+| Document ID | Title | Tier | Description |
+| :--- | :--- | :--- | :--- |
+| **topic-service-email** | [Sovereign Email Bridge](./topic-service-email.md) | Tier 5 | Cloud transport interceptor and JSON extraction. |
+| **topic-service-parser** | [Active Intelligence Router](./topic-service-parser.md) | Tier 5 | Entity Bundle refinery and data lifecycle routing. |
+| **SERVICE-CONTENT-01**| [Asset & Knowledge Synthesis](./SERVICE-CONTENT-01.yaml) | Tier 5 | Legal, Memo, and Comm processing engines. |
+| **SERVICE-PEOPLE-01** | [Personnel Distillation](./SERVICE-PEOPLE-01.yaml) | Tier 5 | Harvester and Surveyor logic. |
+
+### Track 3: Sovereign Desktop
+| Document ID | Title | Tier | Description |
+| :--- | :--- | :--- | :--- |
+| **OS-WORKPLACE-01** | [Deterministic Files](./OS-WORKPLACE-01.yaml) | Tier 4 | The "Files over Databases" strategy for native machine-readability. |
 
 ---
-
-## I. THE KNOWLEDGE GRAPH MANDATE
-This repository transcends standard software documentation. It is engineered as a comprehensive Knowledge Graph—a central directory designed to teach advanced technological concepts, cloud architecture, and cryptographic principles.
-
-We reject the modern trend of obfuscated SaaS documentation. Instead, we teach the underlying physics of the technology by utilizing real-world, live-fire case studies:
-* **The Engineering Blueprint (The How):** Provided by **PointSav Digital Systems™** (The Vendor).
-* **The Operational Proof (The Why):** Demonstrated by **Woodfine Management Corp.** (The Customer).
-
----
-
-## II. THE KNOWLEDGE DASHBOARD
-Below is the active ledger of documented topologies. Select a topic to view its complete mathematical and architectural breakdown.
-
-### 📡 1. Sovereign Telemetry (DS-ADR-06)
-**[➔ READ FULL TOPIC: Sovereign Telemetry](./topic-sovereign-telemetry.md)**
-* **The Concept:** Zero-Cookie Architecture.
-* **The Physics:** A self-hosted, air-gapped diode capturing routing metrics via asynchronous payloads and secure Rust engines, bypassing analytics monopolies.
-
-### 🗄️ 2. The Sovereign Data Archive (DS-ADR-02)
-**[➔ READ FULL TOPIC: The Sovereign Data Archive](./topic-os-totebox.md)**
-* **The Concept:** Files over Databases. 
-* **The Physics:** An isolated, secure container holding ledgers as verifiable flat-files, ensuring fiduciary data remains mathematically sealed from cyber threats.
-
-### 🔐 3. Cryptographic Ledgers (DS-ADR-12)
-**[➔ READ FULL TOPIC: Cryptographic Ledgers](./topic-cryptographic-ledgers.md)**
-* **The Concept:** Immutable State Records.
-* **The Physics:** The physical separation of binary assets from their YAML metadata, utilizing SHA-256 hashing to make flat files mathematically immutable.
-
-### 🛡️ 4. Capability-Based Security (SYS-SEC-01)
-**[➔ READ FULL TOPIC: Capability-Based Security](./topic-capability-based-security.md)**
-* **The Concept:** The Mathematical Lock.
-* **The Physics:** A microkernel abstraction replacing traditional operating systems. It enforces a strict one-way command flow to isolate Edge Delivery networks from secure vaults.
-
-### 🧠 5. Sovereign AI Routing (SYS-AI-01)
-**[➔ READ FULL TOPIC: Sovereign AI Routing](./topic-sovereign-ai-routing.md)**
-* **The Concept:** Linguistic Air-Lock.
-* **The Physics:** A physical checkpoint utilizing a local Small Language Model (SLM) to sanitize and anonymize corporate data before external hyperscaler processing.
-
-### 🚀 6. Sovereign Replacement Initiative (SYS-MOONSHOT-01)
-**[➔ READ FULL TOPIC: Sovereign Replacement Initiative](./topic-sovereign-replacement-initiative.md)**
-* **The Concept:** Technical Debt Eradication.
-* **The Physics:** A physical ledger and engineering pipeline designed to quarantine foreign third-party architecture and systematically replace it with native PointSav components.
-
-### 📬 7. Headless Execution Engine (service-message-courier)
-**[➔ READ FULL TOPIC: Message Courier Service](./TOPIC-Message-Courier.md)**
-* **The Concept:** Automated Messaging Protocol.
-* **The Physics:** A generic, headless execution engine utilizing an Adapter Pattern to bridge internal databases with external portals, isolating proprietary operational data from the public Git ledger.
-
----
-
-## III. USAGE & LEGAL PARAMETERS
-The code snippets, architectural patterns, and structural designs documented in this Wiki are intended for educational review and institutional auditing. 
-
-This repository operates strictly under an **Incubation Phase**. Refer to the `LICENSE` file at the root of this directory. All rights to the underlying intellectual property, source code, and deployment patterns are strictly reserved.
+*© 2026 PointSav Digital Systems™.*
