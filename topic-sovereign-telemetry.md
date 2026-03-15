@@ -1,59 +1,40 @@
 # 📡 TOPIC: SOVEREIGN TELEMETRY (ZERO-COOKIE ARCHITECTURE)
 **Protocol Identifier:** DS-ADR-06
-**Status:** Active Deployment
+**Status:** Active Deployment (v1.2.0 - Rust Core)
 **Primary Vendor:** PointSav Digital Systems™
 
----
-
+---\n
 ## I. THE PHILOSOPHY OF DATA SOVEREIGNTY
 In the modern web, analytics are heavily centralized. Monopolies offer "free" analytics in exchange for injecting tracking cookies, harvesting third-party Javascript states, and commoditizing the visitors of corporate websites. 
 
-For institutional capital, real estate syndicates, and high-security enterprises, this represents a severe breach of Data Sovereignty. Handing visitor ledgers to third-party data brokers violates strict privacy mandates and compromises the geographic intelligence of the enterprise.
+For institutional capital and real estate syndicates, this represents a severe breach of Data Sovereignty. Handing visitor ledgers to third-party data brokers violates strict privacy mandates.
 
-**The Solution:** The Sovereign Telemetry Engine (DS-ADR-06). 
-A self-hosted, air-gapped, zero-cookie diode that captures exact routing metrics using asynchronous payloads and offline geographic mapping.
+**The Sovereign Solution:** A self-hosted, compiled, zero-cookie diode that captures exact routing metrics using asynchronous payloads and offline geographic mapping.
 
 ## II. THE ASYNCHRONOUS DIODE (EDGE DELIVERY)
-The telemetry cycle begins at the Edge (the user's web browser). Instead of loading a massive tracking library, the Edge Delivery network injects a mathematically precise, 15-line Vanilla JavaScript snippet.
+The telemetry cycle begins at the Edge. Instead of loading a massive tracking library, the network injects a mathematically precise, 15-line Vanilla JavaScript snippet. It reads the browser's raw state and fires a single `POST` request to the secure cloud.
 
-This script executes silently after the DOM loads. It reads the browser's raw state and fires a single `POST` request to the secure cloud.
-
-**The Edge Beacon (JavaScript):**
-```javascript
-(function() {
-    const payload = {
-        uri: window.location.href,
-        timestamp: new Date().toISOString(),
-        user_agent: navigator.userAgent
-    };
-    fetch("[https://telemetry.yourdomain.com/telemetry-endpoint](https://telemetry.yourdomain.com/telemetry-endpoint)", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-        mode: "cors"
-    }).catch(err => console.error("Telemetry Diode Offline"));
-})();
-```
-
-## III. THE RUST INGESTION DAEMON (TIER-2 CLOUD)
-The cloud relay does not run PHP or Node.js. It runs a strictly compiled, memory-safe Rust daemon. This daemon acts as a cryptographic gatekeeper. If the incoming payload does not perfectly match the JSON contract, the connection is instantly dropped.
-
-**The Ingestion Contract:**
-* Must be an HTTP `POST`.
-* Must contain an ISO 8601 Timestamp.
-* Must contain the exact URI.
-* Must contain the raw User-Agent string.
+## III. THE RUST INGESTION DAEMON (V1.2)
+The request is caught by the `telemetry-daemon`, a memory-safe Rust binary utilizing `tokio` and `warp`. It sanitizes the payload and appends exactly four physical facts to the immutable `ledger_telemetry.csv`:
+* Masked IP Address (Scrubbed via /24 Subnet Masking).
+* ISO 8601 Timestamp.
+* Target URI.
+* Raw User-Agent string.
 
 ## IV. OFFLINE GEOGRAPHIC MAPPING
-To comply with strict privacy laws, IP addresses are never sent to third-party APIs for location lookups. Instead, the Rust daemon relies on a locally vaulted MaxMind `.mmdb` database. 
+To comply with strict privacy laws, IP addresses are never sent to third-party APIs. The `omni-matrix-engine` Rust binary cross-references the masked IP against an offline MaxMind `.mmdb` database to extract the geographic routing, and instantly discards the IP from active memory.
 
-When a ping hits the daemon, it cross-references the masked IP against the offline database, extracts the Metro Region (e.g., Vancouver, London, Madrid), and writes it to an immutable `.csv` ledger. The raw IP is then discarded from the active memory.
+## V. THE 100% DISCLOSURE MATRICES
+The engine synthesizes the raw CSV data into 8 Institutional Brutalist Markdown tables for financial review:
+1. **Time Matrix:** Transposed chronological volume.
+2. **Global Routing Matrix:** Country and Region density.
+3. **Metro Region Matrix:** City-level terminal density.
+4. **Timezone Alignment Matrix:** Temporal alignment.
+5. **Content Matrix:** Target URIs, mathematically siloing `localhost` staging traffic.
+6. **Device Form Factor Matrix:** Desktop vs. Mobile.
+7. **Operating System Matrix:** Platform distribution.
+8. **Raw Architecture Signatures:** Top 5 exact hardware strings.
 
-## V. REAL-WORLD DEPLOYMENT MODEL
-This architecture strictly follows the Institutional Model (Vendor/Customer):
-
-* **The Vendor (PointSav Digital Systems™):** Maintains the `pointsav-monorepo`. Engineers the Rust daemons, updates the `serde` json contracts, and manages the MaxMind binary updates.
-* **The Customer (Woodfine Management Corp.):** Deploys the pre-compiled `os-mediakit` binaries to their secure GCP nodes and injects the JS beacons into their `woodfine-fleet-deployment` marketing sites to protect investor data.
-
-## VI. DISASTER RECOVERY & RETENTION
-To maintain peak Institutional Brutalism, the system avoids heavy database clusters (SQL/Postgres). The data is appended to flat `.csv` ledgers. A chronologically air-gapped "Pull Diode" extracts this data daily to a secure Tier-3 terminal, synthesizes it into Markdown reports, and mathematically purges any raw data older than 10 days to enforce strict data hygiene.
+## VI. REAL-WORLD DEPLOYMENT MODEL
+* **The Vendor (PointSav):** Engineers the Rust cores and generic architectures.
+* **The Customer (Woodfine):** Compiles the binaries on secure GCP nodes, locks the daemon behind `systemd`, and extracts the pristine reports via secure Pull Diodes.
