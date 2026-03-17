@@ -23,7 +23,7 @@
 
 ---
 
-## I. THE EDUCATIONAL MODEL
+## I. THE EDUCATIONAL MODEL | EL MODELO EDUCATIVO
 
 This directory serves as the definitive engineering and architectural encyclopedia for the PointSav ecosystem. It bridges the gap between raw code and operational execution:
 * **The Engineering Blueprint (The How):** Provided by **PointSav Digital Systems™** (The System Vendor).
@@ -35,34 +35,51 @@ This directory serves as the definitive engineering and architectural encycloped
 
 ---
 
-## II. THE KNOWLEDGE DASHBOARD
+## II. THE KNOWLEDGE DASHBOARD | EL PANEL DE CONOCIMIENTO
 
-Below is the active ledger of documented topologies, architectural decisions, and conceptual scaffolds. Select a topic to view its mathematical and architectural breakdown.
+Below is the active ledger of documented topologies. Select a topic to view its complete mathematical and architectural breakdown.
 
-*A continuación se muestra el registro activo de topologías documentadas, decisiones arquitectónicas y andamios conceptuales. Seleccione un tema para ver su desglose matemático y arquitectónico.*
+*A continuación se muestra el registro activo de topologías documentadas. Seleccione un tema para ver su desglose matemático y arquitectónico completo.*
 
-### 📡 Track 1: Active Topologies & Services
-| Topic Document | Conceptual Focus | Status |
-| :--- | :--- | :--- |
-| `TOPIC-06-Sovereign-Telemetry.md` | Sovereign Telemetry (Zero-Cookie Architecture) | 🟢 Active |
-| `TOPIC-Message-Courier.md` | Headless Execution Engine (Adapter Pattern) | 🟢 Active |
-| `TOPIC-Service-People.md` | Sovereign Personnel Ledger (Files over Databases) | 🟢 Active |
+### 📡 1. Sovereign Telemetry
+**[➔ READ FULL TOPIC: Sovereign Telemetry](./TOPIC-06-Sovereign-Telemetry.md)**
+* **The Concept:** Private Data Collection.
+* **The Physics:** Tracking network performance and audience engagement securely, without using third-party cookies or surrendering data to analytics monopolies.
 
-### 📐 Track 2: Architecture Decision Records (ADRs)
-| Topic Document | Structural Mandate | Status |
-| :--- | :--- | :--- |
-| `SYS-ADR-06.yaml` | Immutable Ledgers vs. Self-Healing Intelligence | 🟢 Verified |
-| `SYS-ADR-07.yaml` | Bifurcated Ingestion (Deterministic vs. Probabilistic) | 🟢 Verified |
-| `SYS-ADR-08.yaml` | Systemd Quarantine & Process Supervision Debt | 🟢 Verified |
+* ***El Concepto:** Recopilación de Datos Privada.*
+* ***La Física:** Seguimiento del rendimiento de la red y el compromiso de la audiencia de forma segura, sin utilizar cookies de terceros ni entregar datos a los monopolios analíticos.*
 
-### 🚧 Track 3: Architectural Scaffolds (Incubation)
-| Conceptual Target | System Function | Status |
-| :--- | :--- | :--- |
-| The Sovereign Data Archive | Replacing cloud databases with verifiable flat-files | 🟡 Engineering |
-| Cryptographic Ledgers | SHA-256 metadata locking for flat files | 🟡 Engineering |
-| Capability-Based Security | Microkernel abstractions and one-way network flows | 🟡 Engineering |
-| Sovereign AI Routing | Local linguistic air-locks (SLMs) for data sanitization | 🟡 Engineering |
-| Sovereign Replacement | Eradicating foreign third-party technical debt | 🟡 Engineering |
+### 📬 2. Headless Execution Engine
+**[➔ READ FULL TOPIC: Message Courier Service](./TOPIC-Message-Courier.md)**
+* **The Concept:** Automated Operations.
+* **The Physics:** Securely bridging internal databases with external portals to automate tasks, ensuring core operational data is never exposed to the public internet.
+
+* ***El Concepto:** Operaciones Automatizadas.*
+* ***La Física:** Conectar de forma segura bases de datos internas con portales externos para automatizar tareas, garantizando que los datos operativos centrales nunca se expongan al internet público.*
+
+### 📇 3. Sovereign Personnel Ledger
+**[➔ READ FULL TOPIC: Sovereign Personnel Ledger](./TOPIC-Service-People.md)**
+* **The Concept:** Secure Contact Management.
+* **The Physics:** Storing personnel and contact data in highly secure, independent files rather than vulnerable centralized databases.
+
+* ***El Concepto:** Gestión Segura de Contactos.*
+* ***La Física:** Almacenar datos de personal y de contacto en archivos independientes y altamente seguros en lugar de en bases de datos centralizadas vulnerables.*
+
+### 🗄️ 4. Immutable Ledgers vs. Self-Healing Intelligence
+**[➔ READ FULL TOPIC: SYS-ADR-06](./SYS-ADR-06.yaml)**
+* **The Concept:** The Compliance Layer.
+* **The Physics:** Strictly separating permanent, legally binding records from the active, updating data used by our localized artificial intelligence tools.
+
+* ***El Concepto:** La Capa de Cumplimiento.*
+* ***La Física:** Separar estrictamente los registros permanentes y legalmente vinculantes de los datos activos y actualizados utilizados por nuestras herramientas localizadas de inteligencia artificial.*
+
+### 🧠 5. Bifurcated Ingestion 
+**[➔ READ FULL TOPIC: SYS-ADR-07](./SYS-ADR-07.yaml)**
+* **The Concept:** Smart Data Routing.
+* **The Physics:** Ensuring automated intelligence tools only process general text, while precise financial data is strictly handled by infallible mathematical rules.
+
+* ***El Concepto:** Enrutamiento Inteligente de Datos.*
+* ***La Física:** Garantizar que las herramientas de inteligencia automatizadas solo procesen texto general, mientras que los datos financieros precisos son manejados estrictamente por reglas matemáticas infalibles.*
 
 ---
 
