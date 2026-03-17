@@ -1,4 +1,4 @@
-# 📡 TOPIC-08: The Verification Surveyor & Air-Gapped Fidelity
+# 📡 topic-08: The Verification Surveyor & Air-Gapped Fidelity
 **Protocol Identifier:** DS-ADR-10
 **Status:** Active Deployment (v1.0)
 

@@ -1,40 +1,21 @@
-# 📡 TOPIC: SOVEREIGN TELEMETRY (ZERO-COOKIE ARCHITECTURE)
-**Protocol Identifier:** DS-ADR-06
-**Status:** Active Deployment (v1.2.0 - Rust Core)
-**Primary Vendor:** PointSav Digital Systems™
+# topic-06: Sovereign Telemetry (V4 Intent Beacon)
 
----\n
-## I. THE PHILOSOPHY OF DATA SOVEREIGNTY
-In the modern web, analytics are heavily centralized. Monopolies offer "free" analytics in exchange for injecting tracking cookies, harvesting third-party Javascript states, and commoditizing the visitors of corporate websites. 
+## 1. Architectural Philosophy
+PointSav Digital Systems enforces a strict Zero-Cookie, Zero-State telemetry architecture. The V4 Intent Beacon is engineered to extract maximum behavioral and hardware intelligence from edge clients without violating the structural sovereignty of the user's device. We do not utilize tracking pixels, session IDs, or third-party analytics aggregators. Data is compiled client-side and transmitted asynchronously via `navigator.sendBeacon` upon the `visibilitychange` event.
 
-For institutional capital and real estate syndicates, this represents a severe breach of Data Sovereignty. Handing visitor ledgers to third-party data brokers violates strict privacy mandates.
+## 2. Payload Structure & Hardware Optics
+The V4 payload captures distinct metrics leveraging native browser APIs, completely circumventing PII collection:
+- `user_agent`: Standard device/browser identification.
+- `viewport`: Rendering geometry calculated via `window.innerWidth/Height`.
+- `timezone`: Extracted via `Intl.DateTimeFormat().resolvedOptions().timeZone` for regional mapping without IP geolocation.
+- `device_memory`: Estimated device RAM limits (Hardware Optic).
+- `hardware_cores`: CPU thread count (Hardware Optic).
+- `dwell_seconds`: Millisecond delta from DOM load to tab-close.
+- `scroll_depth`: Maximum vertical scroll percentage.
+- `intent_clicks`: An array of highly-specific interaction targets (e.g., Fleet Manifest, WhatsApp initiations).
 
-**The Sovereign Solution:** A self-hosted, compiled, zero-cookie diode that captures exact routing metrics using asynchronous payloads and offline geographic mapping.
+## 3. Graceful Degradation (Rust Daemon Logic)
+The receiving Rust daemon (`telemetry-daemon.rs`) utilizes `Option<T>` serialization for all V4 parameters. This guarantees absolute backward compatibility with aggressively cached V3 clients. If a legacy payload is received, the daemon safely ingests the available data and writes `unknown` or `0` to the missing CSV columns. This prevents kernel panics and maintains immutable ledger alignment across all fleet deployments.
 
-## II. THE ASYNCHRONOUS DIODE (EDGE DELIVERY)
-The telemetry cycle begins at the Edge. Instead of loading a massive tracking library, the network injects a mathematically precise, 15-line Vanilla JavaScript snippet. It reads the browser's raw state and fires a single `POST` request to the secure cloud.
-
-## III. THE RUST INGESTION DAEMON (V1.2)
-The request is caught by the `telemetry-daemon`, a memory-safe Rust binary utilizing `tokio` and `warp`. It sanitizes the payload and appends exactly four physical facts to the immutable `ledger_telemetry.csv`:
-* Masked IP Address (Scrubbed via /24 Subnet Masking).
-* ISO 8601 Timestamp.
-* Target URI.
-* Raw User-Agent string.
-
-## IV. OFFLINE GEOGRAPHIC MAPPING
-To comply with strict privacy laws, IP addresses are never sent to third-party APIs. The `omni-matrix-engine` Rust binary cross-references the masked IP against an offline MaxMind `.mmdb` database to extract the geographic routing, and instantly discards the IP from active memory.
-
-## V. THE 100% DISCLOSURE MATRICES
-The engine synthesizes the raw CSV data into 8 Institutional Brutalist Markdown tables for financial review:
-1. **Time Matrix:** Transposed chronological volume.
-2. **Global Routing Matrix:** Country and Region density.
-3. **Metro Region Matrix:** City-level terminal density.
-4. **Timezone Alignment Matrix:** Temporal alignment.
-5. **Content Matrix:** Target URIs, mathematically siloing `localhost` staging traffic.
-6. **Device Form Factor Matrix:** Desktop vs. Mobile.
-7. **Operating System Matrix:** Platform distribution.
-8. **Raw Architecture Signatures:** Top 5 exact hardware strings.
-
-## VI. REAL-WORLD DEPLOYMENT MODEL
-* **The Vendor (PointSav):** Engineers the Rust cores and generic architectures.
-* **The Customer (Woodfine):** Compiles the binaries on secure GCP nodes, locks the daemon behind `systemd`, and extracts the pristine reports via secure Pull Diodes.
+## 4. Chronological Synthesis
+The `telemetry-synthesizer.rs` binary utilizes the `chrono` crate to parse the CSV ledger. It generates executive-grade Markdown reports partitioned into strict financial reporting windows: 1D, 1W, 30D, 60D, 90D, YTD, and Inception.

@@ -42,7 +42,7 @@ Below is the active ledger of documented topologies. Select a topic to view its 
 *A continuación se muestra el registro activo de topologías documentadas. Seleccione un tema para ver su desglose matemático y arquitectónico completo.*
 
 ### 📡 1. Sovereign Telemetry
-**[➔ READ FULL TOPIC: Sovereign Telemetry](./TOPIC-06-Sovereign-Telemetry.md)**
+**[➔ READ FULL TOPIC: Sovereign Telemetry](./topic-Sovereign-Telemetry.md)**
 * **The Concept:** Private Data Collection.
 * **The Physics:** Tracking network performance and audience engagement securely, without using third-party cookies or surrendering data to analytics monopolies.
 
@@ -50,7 +50,7 @@ Below is the active ledger of documented topologies. Select a topic to view its 
 * ***La Física:** Seguimiento del rendimiento de la red y el compromiso de la audiencia de forma segura, sin utilizar cookies de terceros ni entregar datos a los monopolios analíticos.*
 
 ### 📬 2. Headless Execution Engine
-**[➔ READ FULL TOPIC: Message Courier Service](./TOPIC-Message-Courier.md)**
+**[➔ READ FULL TOPIC: Message Courier Service](./topic-Message-Courier.md)**
 * **The Concept:** Automated Operations.
 * **The Physics:** Securely bridging internal databases with external portals to automate tasks, ensuring core operational data is never exposed to the public internet.
 
@@ -58,7 +58,7 @@ Below is the active ledger of documented topologies. Select a topic to view its 
 * ***La Física:** Conectar de forma segura bases de datos internas con portales externos para automatizar tareas, garantizando que los datos operativos centrales nunca se expongan al internet público.*
 
 ### 📇 3. Sovereign Personnel Ledger
-**[➔ READ FULL TOPIC: Sovereign Personnel Ledger](./TOPIC-Service-People.md)**
+**[➔ READ FULL TOPIC: Sovereign Personnel Ledger](./topic-Service-People.md)**
 * **The Concept:** Secure Contact Management.
 * **The Physics:** Storing personnel and contact data in highly secure, independent files rather than vulnerable centralized databases.
 

@@ -1,4 +1,4 @@
-# 📡 TOPIC-07: Ontological Governance & The Surveyor Loop
+# 📡 topic-07: Ontological Governance & The Surveyor Loop
 **Protocol Identifier:** DS-ADR-09
 **Status:** Active Deployment (v1.6)
 
