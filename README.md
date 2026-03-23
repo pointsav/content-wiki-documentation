@@ -26,7 +26,7 @@ This repository serves as the definitive index for all architectural decisions a
 | **SYS-ARCH-01** | [Software Architecture](./topic-SYS-ARCH-01.yaml) | Tier 6 | Defines the seL4 Foundation. |
 | **SYS-CORE-01** | [Capability-Based Manager](./topic-SYS-CORE-01.yaml) | Tier 6 | Core Rust Root-Task. |
 | **PPN-01** | [Private Network](./topic-PPN-01.yaml) | Tier 4 | Physical and virtual mesh topology. |
-| **SYS-ADR-08** | [Systemd Quarantine](./topic-SYS-ADR-08.yaml) | Tier 6 | Formal acceptance of process supervision technical debt. |
+| **SYS-ADR-08** | [Systemd Quarantine](./topic-sys-adr-08.yaml) | Tier 6 | Formal acceptance of process supervision technical debt. |
 
 ### Track 2: Totebox Orchestration
 | Document ID | Title | Tier | Description |
