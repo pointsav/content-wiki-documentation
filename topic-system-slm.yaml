@@ -1,0 +1,11 @@
+topic_id: TOPIC-SYSTEM-SLM
+title: The Invisible AI (Semantic Command Router)
+tier: Tier-6-System
+category: System-Architecture
+tags: [slm, semantic-routing, agentic, invisible-ai]
+abstract: |
+  Defines the integration of Small Language Models (SLMs) as silent, semantic parsers rather than conversational chatbots.
+details:
+  the_chat_ui_rejection: "Conversational AI interfaces introduce dangerous friction and ambiguity into network administration. Fiduciary networks require imperative execution, not dialogue."
+  semantic_translation: "system-slm utilizes quantized 270M-parameter models running directly in Rust to parse human intent (e.g., 'isolate the edge node') and compile it instantly into strict binary UDP payloads."
+links: [SYS-ADR-10, TOPIC-SYSTEM-UDP]
