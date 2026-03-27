@@ -1,0 +1,17 @@
+topic_id: SYS-ADR-15
+title: ADR: Violent Cache-Busting Protocol
+tier: Tier-6-System
+category: System-Architecture
+tags: [adr, cache, nginx, browser-state, phantom-data]
+abstract: |
+  Decision record establishing the mathematical eradication of browser caching for all Sovereign Command Ledgers and operator interfaces.
+details:
+  the_browser_phantom_vulnerability:
+    rationale: "Modern web browsers (Safari, Chrome) aggressively cache HTML/JS files behind Basic Authentication to save bandwidth. This creates a 'Cache Phantom' where the operator sees an outdated UI state, potentially leading to catastrophic routing errors or misaligned physical execution."
+  the_kernel_enforcement:
+    execution_rule: "The NGINX Cloud Shield must inject violent cache-destroying headers into every outbound UI payload, mathematically forbidding the browser from storing the asset locally."
+    required_headers: 
+      - "Cache-Control: 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'"
+      - "expires: off"
+      - "etag: off"
+links: [SYS-ADR-14, DS-ADR-01]
