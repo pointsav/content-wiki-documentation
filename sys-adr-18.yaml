@@ -1,0 +1,17 @@
+topic_id: SYS-ADR-18
+title: ADR: The Intent-Driven Interface (Context-Aware Omnibar)
+tier: Tier-6-System
+category: System-Architecture
+tags: [adr, idi, omnibar, micro-frontend, os-console]
+abstract: |
+  Decision record defining the evolution of the F8 Fiduciary Gateway into a Context-Aware, Intent-Driven Interface (IDI).
+details:
+  the_static_cli_flaw:
+    rationale: "A generic network terminal is insufficient for complex corporate operations like CRM management or generative document drafting."
+  the_context_aware_omnibar:
+    execution_rule: "The 'os-console' Universal Omnibar must dynamically bind its execution logic to the physically mounted Cartridge."
+  cartridge_logic_mapping:
+    F2_PEOPLE: "Omnibar commands execute Identity Ledger queries and CRM self-healing."
+    F4_CONTENT: "Omnibar acts as a Knowledge Forge. Commands trigger generative drafting against the Domain Glossaries (e.g., 'Draft a news release on sustainability')."
+    F8_ADMIN: "Omnibar shifts from network mesh pings to strict Totebox Archive and Integration Gateway administration."
+links: [SYS-ADR-11, SYS-ADR-10]

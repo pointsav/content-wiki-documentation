@@ -4,7 +4,7 @@ tier: Tier-6-System
 category: System-Architecture
 tags: [adr, micro-frontend, chassis, cartridges, os-console]
 abstract: |
-  Decision record establishing the strict physical separation of the UI Presentation Chassis from the Data Execution Plugins (Cartridges) to adhere to modern Google/Meta engineering standards.
+  Decision record establishing the strict physical separation of the UI Presentation Chassis from the Data Execution Plugins (Cartridges).
 details:
   the_chassis:
     component: os-console
@@ -12,4 +12,4 @@ details:
   the_cartridges:
     component: app-console-*
     role: "Isolated HTML/JS fragments. They are completely unaware of the broader system. When an F-Key is struck, the Chassis dynamically mounts the specific Cartridge into the viewport using the native fetch() API."
-links: [SYS-ADR-05, SYS-ADR-10]
+links: [SYS-ADR-14, SYS-ADR-15]

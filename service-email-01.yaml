@@ -1,0 +1,15 @@
+topic_id: service-email-01
+title: service-email: Sovereign Ingress Diode
+tier: Tier-5-Service
+category: Service-Logic
+tags: [maildir, microsoft-graph, micro-batching, leapfrog-2030, totebox-orchestration]
+abstract: |
+  An Event-Driven, Append-Only Sovereign Pipeline designed to extract assets from Microsoft 365 while enforcing strict memory-safe micro-batching to protect 1GB RAM edge environments.
+details:
+  operational_mandate: |
+    The service must connect to info@woodfine.co and sweep three distinct Microsoft folders: 'totebox-ingress', 'OpenStack', and 'PostgresSQL'. It is mathematically hard-capped to extract exactly 3 emails per folder per cycle (9 total maximum).
+  architecture:
+    idempotent_fetch: "Downloads the raw .eml and immediately issues a Hard Delete to the MSFT Cloud, stripping the data from foreign servers."
+    immutable_storage: "Writes the intact .eml to local cold storage at /service-email/maildir/cur/."
+    cognitive_splinter: "Shatters the .eml, routing core text to service-slm and metadata to service-people for self-healing graph reconciliation."
+links: [topic-os-totebox, service-people-01, service-content-01]
