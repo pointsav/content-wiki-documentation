@@ -1,17 +1,18 @@
 topic_id: SYS-ADR-17
-title: ADR: The Sovereign Overlay & LTS Knowledge Graphs
+title: ADR: The Derivative Architecture & Autonomous Synthesis
 tier: Tier-6-System
 category: System-Architecture
-tags: [adr, lts, wiki, overlay, vector-db-bypass, totebox-pedia]
+tags: [adr, derivatives, taxonomy, slm, self-healing, base-asset]
 abstract: |
-  Decision record establishing the mathematical rejection of dynamic Vector Databases (RAG) in favor of Long-Term Support (LTS) Markdown Wikis. The AI acts as a staging engine, not an autonomous publisher.
+  Decision record establishing the Totebox Archive as a Sovereign Cryptographic Ledger modeled on financial derivatives, where dynamic taxonomy is the synthesized output of the system, not a manual data-entry requirement.
 details:
-  the_hyperscaler_flaw:
-    rationale: "Commercial AI relies on Vector Databases that constantly shift in the background, creating 'hallucination creep'. Employees and Service Providers cannot rely on a foundation of knowledge that mutates without human oversight."
-  the_lts_mandate:
-    execution_rule: "The 'content-wiki-*' repositories (Corporate, Projects, Documentation) are designated as Long-Term Support (LTS) ledgers. They contain the canonical truth and are strictly version-controlled."
-  the_sovereign_overlay:
-    execution_rule: "When 'service-slm' extracts new intelligence, it is forbidden from overwriting the LTS Wikis. Instead, it generates an 'Overlay Payload' (Suggested Topics vs. Current State) into a staging queue."
-  editing_is_verification:
-    execution_rule: "The Human-in-the-Loop Fiduciary Gateway must visually review the Overlay. The act of manually approving, editing, or proofreading the Overlay via the F4 Content Cartridge constitutes verification, mathematically merging the new facts into the LTS Wiki."
-links: [OS-WORKPLACE-01, SYS-ADR-10, SERVICE-CONTENT-01]
+  the_base_asset:
+    role: "Ground Truth."
+    mechanism: "The F12 Input Machine and service-email cold storage. Immutable physical files (.pdf, .eml) locked to the disk."
+  the_first_derivative:
+    role: "The Structural Index."
+    mechanism: "Archetypes, Chart of Accounts, Domains, and Themes. Synthesized passively in the background by the SLM reading the Base Assets. It is a self-healing, autonomous map of the company's operational reality."
+  the_third_derivative:
+    role: "Output and Utility."
+    mechanism: "Synthesized intelligence built on the First Derivative. Includes generated content (Memos, Emails) via the F4 Content Forge, and pristine .CSV/.MD exports for Madison Avenue Data Marketplaces."
+links: [SYS-ADR-10, SYS-ADR-18]
