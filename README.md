@@ -53,3 +53,7 @@ The human interface standards for the enterprise.
 
 ---
 *© 2026 PointSav Digital Systems. Public Architectural Blueprint.*
+
+---
+### Operational Systems & Ledgers
+* [The Template Ledger (service-email-template)](./TOPIC-TEMPLATE-LEDGER.md) - Documentation for the Woodfine Management Corp. autonomous email distribution hub and Silent Sync Graph API protocols.
