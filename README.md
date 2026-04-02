@@ -15,25 +15,18 @@
 
 ## 1. THE CYBERPHYSICAL INDEX
 
-**[ EN ]** This repository indexes the structural rules and technical specifications governing the cyberphysical architecture.
+**[ EN ]** This repository serves as the definitive index for all Architecture Decision Records (ADRs) governing the cyberphysical landscape.
 
-> **[ ES ]** *Este repositorio indexa las reglas estructurales y especificaciones técnicas que rigen la arquitectura ciberfísica.*
+> **[ ES ]** *Este repositorio sirve como el índice definitivo para todos los Registros de Decisiones de Arquitectura (ADR) que rigen el panorama ciberfísico.*
 
-## 2. TRACK 1: INFRASTRUCTURE & FOUNDATION
+## 2. ARCHITECTURE DECISION RECORDS
 
-| Document ID | Title | Description |
-| :--- | :--- | :--- |
-| **SYS-STRAT-01** | [The Digital First Paradigm](./sys-strat-01.yaml) | The 3-Layer architecture mapping. |
-| **SYS-CONTRACTS-01**| [Structural Compliance](./sys-contracts-01.yaml) | Internal contracts supporting statutory auditability. |
-| **SYS-ARCH-01** | [Software Architecture](./sys-arch-01.yaml) | Defines the isolated protection domains. |
-
-## 3. TRACK 2: RECORD KEEPING & GATEWAYS
-
-| Document ID | Title | Description |
-| :--- | :--- | :--- |
-| **SERVICE-EMAIL-01** | [The Communications Ledger](./service-email-01.yaml) | The administrative event log protocol. |
-| **SERVICE-PEOPLE-01** | [The Identity Ledger](./service-people-01.yaml) | Identity resolution definitions. |
-| **TOPIC-STORAGE-01** | [Hardware WORM Custody](./TOPIC-STORAGE-01.md) | Physical write-limitation standards. |
+| Document ID | Execution Mandate |
+| :--- | :--- |
+| **SYS-ADR-07** | [Forensic Chain of Custody](./sys-adr-07.yaml) - Raw analog files must be permanently vaulted prior to any data extraction routines. |
+| **SYS-ADR-10** | [Zero-Form Architecture](./sys-adr-10.yaml) - Defines operator verification to prevent autonomous system overreach. |
+| **SYS-ADR-18** | [Console OS Routing](./sys-adr-18.yaml) - Establishes execution mapping to project raw ledger states to the browser-based HUD. |
+| **SYS-ADR-19** | [Sovereign AI Routing](./sys-adr-19.yaml) - Dictates anonymized cloud query routing with localized on-metal re-hydration. |
 
 ---
 
