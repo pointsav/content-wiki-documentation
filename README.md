@@ -1,32 +1,46 @@
 <div align="center">
 
 # PointSav Digital Systems
-### *Documentation Wiki | Wiki de Documentación*
-**Vancouver | New York | Berlin**
+### *Documentation Wiki: The Technical Data Room*
+### *Wiki de Documentación: La Sala de Datos Técnica*
 
-[ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Design System** ](https://github.com/pointsav/pointsav-design-system) | [ **Live Fleet** ](https://github.com/woodfine/woodfine-fleet-deployment)
+[![Index](https://img.shields.io/badge/Index-Technical_Data_Room-111827?style=flat-square)](#)
+[![Security](https://img.shields.io/badge/Security-Structural_Rules-111827?style=flat-square)](#)
+
+[ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Organization Profile** ](https://github.com/pointsav) | [ **Fleet Deployment** ](https://github.com/woodfine/woodfine-fleet-deployment)
 
 </div>
 
 ---
 
-## 1. OVERVIEW | VISIÓN GENERAL
+## 1. AUDIT OVERVIEW | VISIÓN GENERAL DE AUDITORÍA
 
-**[ EN ]** This is the central library explaining how PointSav Digital Systems are built. It proves to partners and auditors that our security relies on strict physical rules, not human promises.
+**[ EN ]** This wiki serves as the comprehensive, auditable index of all internal rules governing PointSav Digital Systems. It proves to technical auditors that our plain-language security claims are enforced by rigid, hardware-level engineering laws rather than human policy.
 <br><br>
-**[ ES ]** Esta es la biblioteca central que explica cómo se construyen los sistemas PointSav. Demuestra a socios y auditores que nuestra seguridad se basa en reglas físicas estrictas, no en promesas humanas.
+**[ ES ]** Esta wiki sirve como el índice completo y auditable de todas las reglas internas que rigen a PointSav Digital Systems. Demuestra a los auditores técnicos que nuestras afirmaciones de seguridad en lenguaje claro son aplicadas por leyes de ingeniería rígidas a nivel de hardware en lugar de por políticas humanas.
 
 ---
 
-## 2. SYSTEM BLUEPRINTS | PLANOS DEL SISTEMA
+## 2. OPERATING SYSTEMS INDEX | ÍNDICE DE SISTEMAS OPERATIVOS
 
-| Document ID | Title | What it Explains |
+| System Tag | Core Function | Status | 
+| :--- | :--- | :--- | 
+| `os-totebox` | The isolated hardware-agnostic digital environment. | 🟢 Active |
+| `os-console` | The lightning-fast transaction ledger. | 🟡 Staging |
+| `os-workplace` | The visual desktop environment mapping machine data. | 🟡 Staging |
+| `os-network-admin` | Private network routing and physical machine map. | 🟢 Active |
+| `os-infrastructure` | The universal hypervisor for bare-metal nodes. | 🟢 Active |
+
+---
+
+## 3. ENGINEERING LOGIC INDEX | ÍNDICE DE LÓGICA DE INGENIERÍA
+
+| Logic Tag | Execution Rule | Status |
 | :--- | :--- | :--- |
-| **SYS-STRAT-01** | The Master Plan | How our network, storage, and tools fit together. |
-| **SYS-CONTRACTS-01**| Built-In Auditing | How the system guarantees honest record-keeping. |
-| **SYS-ARCH-01** | Software Design | How we keep different programs strictly separated. |
-| **TOPIC-STORAGE-01** | Permanent Vaults | How we ensure data can never be tampered with. |
-| **TOPIC-EDGE-01** | Internet Shields | How we block public internet risks at the front door. |
+| `service-*` | Autonomous background engines handling data processing. Zero human UI. | 🟢 Active |
+| `app-*` | User-facing environments and delivery vehicles. | 🟡 Staging |
+| `tool-*` | Manual administrative scripts requiring explicit operator authorization. | 🟢 Active |
+| `vendor-*` | Third-party legacy bridges (strictly quarantined from sovereign logic). | 🔴 Locked |
 
 ---
 *© 2026 PointSav Digital Systems. "PointSav Digital Systems" and "Totebox" are trademarks.*
