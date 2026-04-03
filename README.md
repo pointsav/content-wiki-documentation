@@ -15,18 +15,18 @@
 
 ## 1. THE CYBERPHYSICAL INDEX
 
-**[ EN ]** This repository serves as the definitive index for all Architecture Decision Records (ADRs) governing the cyberphysical landscape.
+**[ EN ]** This repository serves as the definitive technical library for all Architecture Decision Records (ADRs) governing the cyberphysical environment.
 
-> **[ ES ]** *Este repositorio sirve como el índice definitivo para todos los Registros de Decisiones de Arquitectura (ADR) que rigen el panorama ciberfísico.*
+> **[ ES ]** *Este repositorio sirve como la biblioteca técnica definitiva para todos los Registros de Decisiones de Arquitectura (ADR) que rigen el entorno ciberfísico.*
 
 ## 2. ARCHITECTURE DECISION RECORDS
 
-| Document ID | Execution Mandate |
-| :--- | :--- |
-| **SYS-ADR-07** | [Forensic Chain of Custody](./sys-adr-07.yaml) - Raw analog files must be permanently vaulted prior to any data extraction routines. |
-| **SYS-ADR-10** | [Zero-Form Architecture](./sys-adr-10.yaml) - Defines operator verification to prevent autonomous system overreach. |
-| **SYS-ADR-18** | [Console OS Routing](./sys-adr-18.yaml) - Establishes execution mapping to project raw ledger states to the browser-based HUD. |
-| **SYS-ADR-19** | [Sovereign AI Routing](./sys-adr-19.yaml) - Dictates anonymized cloud query routing with localized on-metal re-hydration. |
+| Document ID | Execution Mandate | Enactment Status |
+| :--- | :--- | :--- |
+| **SYS-ADR-07** | [Forensic Chain of Custody](./sys-adr-07.yaml) - Raw analog files must be vaulted prior to data extraction. | 🟢 Active |
+| **SYS-ADR-10** | [Zero-Form Architecture](./sys-adr-10.yaml) - Defines required operator human-in-the-loop verification. | 🟢 Active |
+| **SYS-ADR-18** | [Console OS Routing](./sys-adr-18.yaml) - Maps structural states to the browser-based executive HUD. | 🟢 Active |
+| **SYS-ADR-19** | [Sovereign AI Routing](./sys-adr-19.yaml) - Dictates anonymized query routing with local re-hydration. | 🟢 Active |
 
 ---
 
