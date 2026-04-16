@@ -1,70 +1,123 @@
 <div align="center">
 
-# 📚 CONTENT WIKI: THE KNOWLEDGE GRAPH
-### INSTITUTIONAL TECHNICAL DOCUMENTATION & EDUCATION
-*The physics and mathematics of sovereign cloud architecture.*
+# PointSav — Technical Documentation Wiki
+### *The Engineering Library for the PointSav Platform*
 
-[![Status: Incubation](https://img.shields.io/badge/Status-Incubation-yellow.svg)](#)
-[![Role: Knowledge Graph](https://img.shields.io/badge/Role-Knowledge_Graph-blue.svg)](#)
-[![Framework: Sovereign OS](https://img.shields.io/badge/Framework-Sovereign_OS-purple.svg)](#)
+[![Status: Active](https://img.shields.io/badge/Status-Active-22863a.svg?style=flat-square)](#)
+[![Role: Documentation](https://img.shields.io/badge/Role-Technical_Library-0075ca.svg?style=flat-square)](#)
 
 <br/>
 
-**[ ➔ System Engineering Monorepo ](https://github.com/pointsav/pointsav-monorepo)**<br/>
-**[ ➔ Linguistic & Design System ](https://github.com/pointsav/pointsav-design-system)**<br/>
-**[ ➔ Customer Fleet Deployment ](https://github.com/woodfine/woodfine-fleet-deployment)**
+**[→ Engineering Monorepo](https://github.com/pointsav/pointsav-monorepo)** &nbsp;·&nbsp; **[→ Design System](https://github.com/pointsav/pointsav-design-system)** &nbsp;·&nbsp; **[→ Live Deployment](https://github.com/woodfine/woodfine-fleet-deployment)** &nbsp;·&nbsp; **[→ pointsav.com](https://pointsav.com)**
 
 </div>
 
-<br/>
+---
 
-> [!WARNING]
-> **THE KNOWLEDGE GRAPH MANDATE**
-> This repository transcends standard software documentation. We reject the modern trend of obfuscated SaaS documentation. We teach the underlying physics of the technology by utilizing real-world, live-fire case studies.
+## About This Repository
+
+This is the technical library for the PointSav platform. It contains Architecture Decision Records, service specifications, operational guides, and the platform glossary. Where the engineering monorepo contains the code, this repository contains the reasoning behind it.
+
+The intended reader is anyone who needs to understand not just what the platform does, but why specific architectural choices were made — auditors, incoming contributors, institutional partners, and technical due diligence reviewers.
 
 ---
 
-## I. THE EDUCATIONAL MODEL (PROVING THE PHYSICS)
+## Architecture Decision Records
 
-This directory serves as the definitive engineering and architectural encyclopedia for the PointSav ecosystem. It bridges the gap between raw code and operational execution. 
+ADRs are formal commitments to specific design choices. They are not proposals — they represent decisions already made, implemented, and binding on all future development.
 
-We use this Knowledge Graph to document the exact physics behind the **Totebox Archive**. It proves to auditors and stakeholders precisely how we achieve "Zero System Admin" deployment and **Freely Transferable Record Keeping** without relying on proprietary hyperscaler black-boxes.
+**Compliance and Data Architecture**
 
-* **The Engineering Blueprint (The How):** Provided by **PointSav Digital Systems™** (The System Vendor).
-* **The Operational Proof (The Why):** Demonstrated by **Woodfine Management Corp.** (The Customer).
+`SYS-ADR-06.yaml` — Why the compliance archive and the intelligence layer are two physically separate systems, and why querying one for the other's purpose produces incorrect results.
 
----
+`SYS-ADR-07.yaml` — Why structured data (CSV, JSON, spreadsheets) is forbidden from routing through AI processing, and why all inbound compound files must be vaulted before any extraction logic is applied.
 
-## II. THE KNOWLEDGE DASHBOARD
+`SYS-ADR-10.yaml` — Why F12 is the mandatory human checkpoint for all base asset ingestion and why there is no batch import path that bypasses it.
 
-Below is the active ledger of documented topologies, architectural decisions, and conceptual scaffolds. Select a topic to view its mathematical and architectural breakdown.
+**Security Architecture**
 
-### 📡 Track 1: Active Topologies & Services
-| Topic Document | Conceptual Focus | Status |
-| :--- | :--- | :--- |
-| `TOPIC-06-Sovereign-Telemetry.md` | Sovereign Telemetry (Zero-Cookie Architecture). | 🟢 Active |
-| `TOPIC-Message-Courier.md` | Headless Execution Engine (Adapter Pattern). | 🟢 Active |
-| `TOPIC-Service-People.md` | Sovereign Personnel Ledger (Files over Databases). The foundational logic enabling the Bootable Disk Image. | 🟢 Active |
+`SYS-ADR-08.yaml` — Why systemd is classified as a quarantined foreign component and what constraints govern its temporary use on Debian cloud relays.
 
-### 📐 Track 2: Architecture Decision Records (ADRs)
-| Topic Document | Structural Mandate | Status |
-| :--- | :--- | :--- |
-| `SYS-ADR-06.yaml` | Immutable Ledgers (`service-fs`) vs. Self-Healing Intelligence. The math behind WORM compliance. | 🟢 Verified |
-| `SYS-ADR-07.yaml` | Bifurcated Ingestion (Deterministic vs. Probabilistic). | 🟢 Verified |
-| `SYS-ADR-08.yaml` | Systemd Quarantine & Process Supervision Debt. | 🟢 Verified |
+`SYS-ADR-13.yaml` — Why the master routing node and its cryptographic keys reside on physical hardware the executive controls, rather than on cloud infrastructure.
 
-### 🚧 Track 3: Architectural Scaffolds (Incubation)
-| Conceptual Target | System Function | Status |
-| :--- | :--- | :--- |
-| The Sovereign Data Archive | Replacing cloud databases with verifiable flat-files. | 🟡 Engineering |
-| Cryptographic Ledgers | Machine-Based Authorization (MBA) and SHA-256 metadata locking. | 🟡 Engineering |
-| Cold Storage Entanglement | Securely locking external physical drives to specific Totebox archives. | 🟡 Engineering |
-| Sovereign AI Routing | Local linguistic air-locks (SLMs) for data sanitization. | 🟡 Engineering |
-| Sovereign Replacement | Eradicating foreign third-party technical debt. | 🟡 Engineering |
+`SYS-ADR-16.yaml` — Why WireGuard's layer-3 topology requires application-level unicast for fleet commands and why UDP broadcast is prohibited.
+
+**User Interface Architecture**
+
+`SYS-ADR-11.yaml` — Why ConsoleOS is split into a stateless Chassis and isolated Cartridges, and why each F-key function is a separately deployable unit.
+
+`SYS-ADR-14.yaml` — Why static UI requests and API calls route through separate ports (8888 and 8080) at the NGINX layer.
+
+`SYS-ADR-15.yaml` — Why two-layer cache destruction is enforced on every outbound UI payload.
+
+`SYS-ADR-17.yaml` — The Derivative Architecture: Base Assets, First Derivative, and Third Derivative — and why these three layers must never be conflated.
+
+`SYS-ADR-18.yaml` — Why ConsoleOS is a routing terminal, not a web application, and what this means for how outputs reach the operator.
+
+`SYS-ADR-19.yaml` — Why automated AI publishing to verified ledgers is prohibited, and the Verification Airgap (Git for Knowledge) model that enforces this.
 
 ---
 
-## III. USAGE & LEGAL PARAMETERS
-The code snippets, architectural patterns, and structural designs documented in this Wiki are intended for educational review and institutional auditing. 
+## Service Specifications
 
-This repository operates strictly under an **Incubation Phase**. Refer to the `LICENSE` file at the root of this directory. All rights to the underlying intellectual property, source code, and deployment patterns are strictly reserved.
+**The Data Pipeline**
+
+`topic-service-email.md` — How the mail service pulls from Microsoft 365, why it applies zero intelligence to content, and what the hard cap of 3 emails per folder per cycle protects against.
+
+`topic-service-extraction.md` — How the deterministic parser routes structured versus unstructured payloads, why the raw file is always vaulted before extraction begins, and how transaction IDs maintain chain of custody.
+
+`topic-service-slm.md` — How the AI Gateway operates in two simultaneous roles: local point-in-time execution and the doorman protocol that prevents corporate records from reaching external AI models. The three operator paths — no AI, DIY via doorman, packaged product.
+
+`topic-service-people.md` — How the personnel ledger operates as a flat-file state machine, the Verification Surveyor workflow, and the daily verification limit design rationale.
+
+`topic-service-content.md` — How the knowledge index self-heals, the four control valves that govern taxonomy update rates, and why slow update rates are a feature rather than a limitation.
+
+`topic-service-search.md` — How the Tantivy-based inverted index provides air-gappable full-text search without a running database engine, and what DARP compliance requires.
+
+`topic-service-egress.md` — How Cold Storage Entanglement works, the cryptographic chunking mechanism, and how physical drives are mathematically locked to specific archives.
+
+**Infrastructure and Security**
+
+`topic-service-fs.md` — How the immutable ledger enforces WORM compliance at the filesystem level and why even an administrator cannot delete records.
+
+`topic-ppn-topology.md` — The PointSav Private Network architecture, WireGuard mesh design, and the Command Authority model.
+
+`TOPIC-TELEMETRY-ARCHITECTURE.md` — The four-tier telemetry routing model, zero-cookie pipeline design, and the pull diode pattern.
+
+---
+
+## Operational Guides
+
+`topic-zero-touch-launch.md` — The four-phase Zero-Touch Launch Cycle: One-Click Launch, TUI Administrator, Cold Storage Entanglement, and Stateful Extraction (The Transferable Ledger).
+
+`topic-verification-surveyor.md` — The human-in-the-loop identity verification workflow, the air-gap rationale, and the daily throttle design.
+
+`topic-crypto-attestation.md` — Client-side SHA-256 payload attestation for public-facing disclosures, browser-native implementation, and the institutional audit use case.
+
+`topic-sovereign-ai-routing.md` — The external AI routing model: payload sanitisation, anonymised structural skeleton, local re-hydration, and why the external model never holds actual corporate records.
+
+---
+
+## Glossaries
+
+Three machine-readable glossaries support the platform's bilingual (English/Spanish) institutional voice:
+
+| Glossary | Contents |
+|:---|:---|
+| `glossary-corporate.csv` | Financial and investment terminology — Direct-Hold Solutions, LP structures, four-jurisdiction entity names, BCSC compliance terms |
+| `glossary-projects.csv` | Real estate and physical architecture — building typologies, co-location strategy, sustainability certifications, national tenant categories |
+| `glossary-documentation.csv` | Platform and technology — all OS types, services, deployment prefixes, ConsoleOS variants |
+
+---
+
+## Contributing
+
+This wiki is maintained by PointSav Digital Systems contributors. All additions must reference an ADR, service specification, or glossary entry. Content that cannot be traced to the platform architecture does not belong here.
+
+**[→ github.com/pointsav](https://github.com/pointsav)** &nbsp;·&nbsp; **[→ open.source@pointsav.com](mailto:open.source@pointsav.com)**
+
+---
+
+*© 2026 PointSav Digital Systems™. All rights reserved.*
+
+*→ Versión en español: [README.es.md](./README.es.md)*

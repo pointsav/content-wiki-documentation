@@ -1,47 +1,72 @@
 <div align="center">
 
-# Documentation Wiki
-### *Arquitectura del Sistema y Pruebas de Seguridad*
+# PointSav — Wiki de Documentación Técnica
+### *La Biblioteca de Ingeniería de la Plataforma PointSav*
 
-[ **System Monorepo** ](https://github.com/pointsav/pointsav-monorepo) | [ **Design System** ](https://github.com/pointsav/pointsav-design-system) | [ **Main Profile** ](https://github.com/pointsav)
+<br/>
 
-*Despliegue Operativo:* [ **Woodfine Management Corp.** ](https://github.com/woodfine)
-
-[ 🇬🇧 Read this document in English ](./README.md)
+**[→ Monorepo de Ingeniería](https://github.com/pointsav/pointsav-monorepo)** &nbsp;·&nbsp; **[→ Sistema de Diseño](https://github.com/pointsav/pointsav-design-system)** &nbsp;·&nbsp; **[→ pointsav.com](https://pointsav.com)**
 
 </div>
 
 ---
 
-> [!NOTE]
-> **POSTURA OPERATIVA [MARZO 2026]**
-> **Fase:** Iteración de Producción 2 | **Enfoque:** Integración de Sistema de 3 Vías y Formalización de Contratos de Nivel 6 | **Estado:** Despliegue activo de la tubería de datos soberana.
+## Sobre Este Repositorio
 
-### 📚 Matriz de Conocimiento Soberano
-Este repositorio sirve como el índice auditado definitivo para todas las decisiones arquitectónicas y especificaciones del sistema que rigen la Red Soberana PointSav. Opera como la sala de datos técnica, demostrando matemáticamente la integridad estructural de la empresa.
+Esta es la biblioteca técnica de la plataforma PointSav. Contiene Registros de Decisiones de Arquitectura, especificaciones de servicios, guías operativas y el glosario de la plataforma. Donde el monorepo de ingeniería contiene el código, este repositorio contiene el razonamiento detrás de él.
 
-#### Vía 1: Infraestructura y Fundación
-| ID del Documento | Título | Nivel | Descripción |
-| :--- | :--- | :--- | :--- |
-| **SYS-STRAT-01** | [The Digital First Paradigm](./topic-SYS-STRAT-01.yaml) | Nivel 6 | Mapeo de la arquitectura de 3 Vías. |
-| **SYS-CONTRACTS-01**| [Mathematical Compliance](./topic-SYS-CONTRACTS-01.yaml) | Nivel 6 | Los Seis Contratos de Orquestación que garantizan SOC 3 y DARP. |
-| **SYS-ARCH-01** | [Software Architecture](./topic-SYS-ARCH-01.yaml) | Nivel 6 | Define la fundación seL4. |
-| **SYS-CORE-01** | [Capability-Based Manager](./topic-SYS-CORE-01.yaml) | Nivel 6 | Tarea Raíz central en Rust. |
-| **PPN-01** | [Private Network](./topic-PPN-01.yaml) | Nivel 4 | Topología de malla física y virtual. |
-| **SYS-ADR-08** | [Systemd Quarantine](./topic-SYS-ADR-08.yaml) | Nivel 6 | Aceptación formal de la deuda técnica de supervisión de procesos. |
-
-#### Vía 2: Orquestación Totebox
-| ID del Documento | Título | Nivel | Descripción |
-| :--- | :--- | :--- | :--- |
-| **SERVICE-CONTENT-01**| [Asset & Knowledge Synthesis](./topic-SERVICE-CONTENT-01.yaml) | Nivel 5 | Motores de procesamiento Legal, Memo y Comm. |
-| **SERVICE-PEOPLE-01** | [Personnel Distillation](./topic-SERVICE-PEOPLE-01.yaml) | Nivel 5 | Lógica de recolección y topografía. |
-| **SERVICE-SLM-01** | [Linguistic Air-Lock](./topic-service-slm.md) | Nivel 5 | Cognitive Forge y lógica de ejecución de prompts. |
-| **SERVICE-SEARCH-01** | [Sovereign Inverted Index](./topic-service-search.md) | Nivel 5 | Arquitectura de búsqueda de archivo plano Leapfrog 2050. |
-
-#### Vía 3: Sovereign Desktop
-| ID del Documento | Título | Nivel | Descripción |
-| :--- | :--- | :--- | :--- |
-| **OS-WORKPLACE-01** | [Deterministic Files](./topic-OS-WORKPLACE-01.yaml) | Nivel 4 | Estrategia de "Archivos sobre Bases de Datos" para legibilidad nativa por máquina. |
+El lector objetivo es cualquiera que necesite entender no solo qué hace la plataforma, sino por qué se tomaron decisiones arquitectónicas específicas — auditores, nuevos colaboradores, socios institucionales y revisores de diligencia debida técnica.
 
 ---
-*© 2026 PointSav Digital Systems™*
+
+## Registros de Decisiones de Arquitectura
+
+Los ADR son compromisos formales con decisiones de diseño específicas. No son propuestas — representan decisiones ya tomadas, implementadas y vinculantes para todo desarrollo futuro.
+
+**Cumplimiento y Arquitectura de Datos**
+
+`SYS-ADR-06.yaml` — Por qué el archivo de cumplimiento y la capa de inteligencia son dos sistemas físicamente separados, y por qué consultar uno para el propósito del otro produce resultados incorrectos.
+
+`SYS-ADR-07.yaml` — Por qué los datos estructurados (CSV, JSON, hojas de cálculo) tienen prohibido enrutarse a través del procesamiento de IA, y por qué todos los archivos compuestos entrantes deben almacenarse antes de aplicar cualquier lógica de extracción.
+
+`SYS-ADR-10.yaml` — Por qué F12 es el punto de control humano obligatorio para el ingreso de todos los activos base y por qué no existe una ruta de importación masiva que lo evite.
+
+**Arquitectura de Seguridad**
+
+`SYS-ADR-13.yaml` — Por qué el nodo de enrutamiento maestro y sus claves criptográficas residen en hardware físico que el ejecutivo controla, en lugar de en infraestructura de nube.
+
+`SYS-ADR-19.yaml` — Por qué la publicación automatizada de IA en registros verificados está prohibida, y el modelo de Verificación Airgap (Git para el Conocimiento) que lo aplica.
+
+**Arquitectura de Interfaz de Usuario**
+
+`SYS-ADR-11.yaml` — Por qué ConsoleOS está dividido en un Chasis sin estado y Cartuchos aislados, y por qué cada función de tecla F es una unidad desplegable de forma independiente.
+
+`SYS-ADR-17.yaml` — La Arquitectura Derivada: Activos Base, Primera Derivada y Tercera Derivada — y por qué estas tres capas nunca deben confundirse.
+
+---
+
+## Especificaciones de Servicios
+
+`topic-service-slm.md` — Cómo el Pasarela de IA opera en dos roles simultáneos: ejecución local puntual y el protocolo portero que evita que los registros corporativos lleguen a modelos de IA externos.
+
+`topic-service-people.md` — Cómo funciona el libro mayor de personal como máquina de estado de archivos planos, el flujo de trabajo del Inspector de Verificación y el diseño del límite de verificación diaria.
+
+`topic-service-search.md` — Cómo el índice invertido basado en Tantivy proporciona búsqueda de texto completo sin un motor de base de datos en ejecución, y qué requiere el cumplimiento DARP.
+
+`topic-ppn-topology.md` — La arquitectura de la Red Privada PointSav, el diseño de la malla WireGuard y el modelo de Autoridad de Comando.
+
+---
+
+## Glosarios
+
+| Glosario | Contenido |
+|:---|:---|
+| `glossary-corporate.csv` | Terminología financiera y de inversión — Soluciones de Tenencia Directa, estructuras LP, entidades en cuatro jurisdicciones, términos de cumplimiento |
+| `glossary-projects.csv` | Bienes raíces y arquitectura física — tipologías de edificios, estrategia de coubicación, certificaciones de sostenibilidad |
+| `glossary-documentation.csv` | Plataforma y tecnología — todos los tipos de SO, servicios, prefijos de despliegue, variantes de ConsoleOS |
+
+---
+
+*© 2026 PointSav Digital Systems™. Todos los derechos reservados.*
+
+*→ English version: [README.md](./README.md)*
