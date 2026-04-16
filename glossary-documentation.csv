@@ -1,5 +1,5 @@
 Term_EN,Term_ES,Definition
-PointSav Information Systems AG or PointSav Digital Systems AG,,
+PointSav Digital Systems,,
 PointSav.com,,
 PointSav,,
 .EXE,,
@@ -98,12 +98,12 @@ Graphic Design,,
 HTML,,
 Infrastructure OS,,
 Installation Guide,,
-Interface OS – BIM Server,,
-Interface OS – Command Centre,,
-Interface OS – Data Engine,,
-Interface OS – GIS Engine,,
-Interface OS – IoT Connect,,
-Interface OS,,
+OrchestrationOS – BIM Server,,
+OrchestrationOS – Command Centre,,
+OrchestrationOS – Data Engine,,
+OrchestrationOS – GIS Engine,,
+OrchestrationOS – IoT Connect,,
+OrchestrationOS,,
 IoT Connect,,
 IoT Devices,,
 IoT Device Providers,,
@@ -187,11 +187,11 @@ Source Code,,
 Specialty Software,,
 Stakeholders,,
 Subdomain,,
-Surveillance,,"Capitalism a concept in political economics which denotes the widespread collection and commodification of personal data by corporations."
+Surveillance,,Monitoring of user activity or system behaviour for security or analytical purposes. PointSav replaces third-party surveillance dependencies with zero-cookie first-party telemetry pipelines.
 System Design,,
 Tech Community,,
 Technical Lead,,
-Technofeudalism,,"the new power that is reshaping our lives and the world, and is the greatest current threat to the liberal individual..."
+Technofeudalism,,A term describing structural dependency on platform providers who control access to data and services. Cited as context for the vendor lock-in problem that PointSav is designed to resolve.
 Technology Selection,,
 Tenants,,
 Terminal,,
@@ -203,7 +203,7 @@ Totebox Archive,,
 Totebox Archive – Corporate,,
 Totebox Archive – Metadata and FTP,,
 Totebox Archive – Personnel,,
-Totebox Archive – Real Property,,
+Totebox Archive – Property,,
 Totebox Orchestration,,
 Totebox OS – BIM,,
 Totebox OS – Bookkeeper,,
@@ -266,3 +266,7 @@ Mark Up Language,,
 Information Technology,Information Technology,Required for robust operations.
 Property Management,Administración de Propiedades,Function of proprietary software.
 Book-Entry,Anotación en Cuenta,Electronic registration.
+OrchestrationOS,OrchestrationOS,The stateless logic and compute layer. Holds no data. Connects ConsoleOS terminals to one or more ToteboxOS archives and provides extended compute capacity for BIM rendering, GIS spatial analysis, SLM inference, and data warehouse operations. Required for multi-archive use cases — the monetisation boundary between free and proprietary tiers.
+PropertyArchive,PropertyArchive,A ToteboxOS archive for a physical property. Anchored to a Land Title PIN or legal address. Contains permits, lifecycle records, BIM drawings, IoT data, lease register, and maintenance history. Replaces legacy term RealPropertyArchive.
+service-extraction,service-extraction,The deterministic parser service. Strips proprietary formatting from inbound payloads and routes structured data to deterministic services and unstructured text to service-slm. Assigns transaction IDs for chain-of-custody tracing. Canonical long-term name replacing the legacy working name service-parser.
+service-search,service-search,The inverted index service. Provides rapid full-text retrieval across all files in a Totebox Archive using Tantivy. Operates without a running database engine — the index is static and binary and can be searched on an air-gapped machine. Satisfies DARP compliance: data must be searchable without proprietary software.
