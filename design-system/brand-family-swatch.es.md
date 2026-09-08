@@ -5,7 +5,7 @@ content_type: topic
 index_group: brand-surface
 category: design-system
 slug: brand-family-swatch
-short_description: "Las familias de color de marca asignadas a categorías de anclaje minoristas e institucionales en la superficie GIS de co-ubicación de la plataforma, proporcionando identificadores codificados por color consistentes para visualización de mapas y datos tabulares en modos de visualización accesible y estándar."
+short_description: "Un componente agnóstico respecto a la taxonomía que combina un punto codificado por color con una etiqueta semántica para identificar categorías de familias de anclas, con colores resueltos en tiempo de ejecución por cada implementación en lugar de venir fijados como una taxonomía única."
 title: Muestrario de familias de marcas
 paired_with: brand-family-swatch.md
 state: authoritative
@@ -17,11 +17,11 @@ authored: 2026-04-30
 last_edited: 2026-05-25
 ---
 
-El muestrario de familias de marca es el componente de clasificación visual que la [[app-orchestration-gis|superficie GIS de la plataforma]] utiliza para identificar categorías de anclas comerciales — Departamental, Ferretería y Club de Compras — en mapas, filas de filtros y paneles de detalle, como parte de la [[location-intelligence-platform|plataforma de inteligencia de ubicación]]. Combina un punto codificado por color con una etiqueta semántica para que la membresía de categoría sea legible de un vistazo sin depender únicamente del color, apoyando la visualización de niveles de la [[retail-co-location-tier-methodology|metodología de niveles de co-ubicación minorista]]. El componente está diseñado para ser agnóstico respecto a la taxonomía: los identificadores de familia se resuelven a través de una configuración en tiempo de ejecución, por lo que los operadores pueden ampliar o reclasificar categorías de anclas sin cambios en el código.
+El muestrario de familias de marca es un componente de clasificación visual agnóstico respecto a la taxonomía: un punto codificado por color combinado con una etiqueta semántica, de modo que la membresía de categoría sea legible de un vistazo sin depender únicamente del color. Los identificadores de familia se resuelven a través de una configuración en tiempo de ejecución en lugar de un cambio de código, por lo que cada implementación define su propia lista de familias y colores — las tres familias mostradas a lo largo de este artículo (Departamental, Ferretería, Club de Compras) son los valores predeterminados de referencia del componente, no una taxonomía fija. La [[app-orchestration-gis|superficie GIS de la plataforma]], parte de la [[location-intelligence-platform|plataforma de inteligencia de ubicación]], es una implementación de referencia: define su propia taxonomía real de familias de anclas a través de este mismo mecanismo en tiempo de ejecución para impulsar la visualización de niveles de la [[retail-co-location-tier-methodology|metodología de niveles de co-ubicación minorista]], en lugar de usar los valores predeterminados mostrados aquí.
 
 ## Representación visual
 
-La superficie GIS de la plataforma utiliza el muestrario de familias de marca para estandarizar la apariencia de las anclas comerciales en marcadores de mapa, filtros tabulares y paneles de detalle. Un identificador codificado por color combinado con una etiqueta semántica garantiza una densidad de datos accesible. El componente desacopla la presentación de la taxonomía subyacente, resolviendo los identificadores de familia a través de una configuración JSON en tiempo de ejecución.
+El muestrario de familias de marca estandariza la apariencia de las categorías de anclas en marcadores de mapa, filtros tabulares y paneles de detalle. Un identificador codificado por color combinado con una etiqueta semántica garantiza una densidad de datos accesible. El componente desacopla la presentación de la taxonomía subyacente, resolviendo los identificadores de familia a través de una configuración JSON en tiempo de ejecución — la [[app-orchestration-gis|superficie GIS]], como implementación de referencia, define su propia taxonomía de esta misma manera, en lugar de que el componente venga con una única taxonomía fija para todas las implementaciones.
 
 ## Directrices de uso
 
@@ -52,13 +52,15 @@ El componente está diseñado para cumplir con los estándares WCAG 2.2 AA:
 
 ## Tokens de diseño (DTCG)
 
-El punto es CSS en línea, no un token dimensionado — `.ps-swatch__dot` está fijado en 10px por defecto y 24px en la variante de marcador de mapa. El componente referencia cuatro tokens compartidos (`{semantic.ink-primary}`, `{semantic.ink-secondary}`, `{primitive.space.05}`, `{primitive.radius.sm}`) más tres colores de familia de marca, específicos de cada implementación y definidos en tiempo de ejecución en lugar de venir incluidos en el paquete de tokens primitivos:
+El punto es CSS en línea, no un token dimensionado — `.ps-swatch__dot` está fijado en 10px por defecto y 24px en la variante de marcador de mapa. El componente referencia cuatro tokens compartidos (`{semantic.ink-primary}`, `{semantic.ink-secondary}`, `{primitive.space.05}`, `{primitive.radius.sm}`) más colores de familia de marca, específicos de cada implementación y definidos en tiempo de ejecución en lugar de venir incluidos en el paquete de tokens primitivos. Los tres valores predeterminados de referencia se incluyen como respaldo CSS para una implementación que aún no ha definido su propia taxonomía:
 
 | Valor | Descripción |
 | :--- | :--- |
-| `#0B5FFF` | Department — azul azur |
-| `#FF6B00` | Hardware — naranja construcción |
-| `#00875A` | Warehouse Club — verde almacén |
+| `#0B5FFF` | Department — azul azur (valor predeterminado de referencia) |
+| `#FF6B00` | Hardware — naranja construcción (valor predeterminado de referencia) |
+| `#00875A` | Warehouse Club — verde almacén (valor predeterminado de referencia) |
+
+Estos son valores predeterminados, no un conjunto cerrado — una implementación amplía o reemplaza la lista de familias mediante su propio archivo de taxonomía en tiempo de ejecución, no editando el componente.
 
 ## Extensiones previstas
 Se prevé que las futuras iteraciones incluyan:
@@ -68,6 +70,6 @@ Se prevé que las futuras iteraciones incluyan:
 ## Véase también
 
 - [[brand-typography]] — los estándares de tipografía de impresión de la plataforma que complementan este sistema de identidad visual
-- [[app-orchestration-gis]] — el motor analítico GIS que produce los datos de clúster que este componente visualiza
-- [[location-intelligence-platform]] — la plataforma de inteligencia de ubicación que usa este componente en su superficie de mapa interactivo
-- [[retail-co-location-tier-methodology]] — la metodología de niveles cuyos rankings impulsan las asignaciones de color del muestrario
+- [[app-orchestration-gis]] — el motor analítico GIS, una implementación de referencia de este componente con su propia taxonomía real de familias de anclas
+- [[location-intelligence-platform]] — la plataforma de inteligencia de ubicación que aloja esa implementación de referencia
+- [[retail-co-location-tier-methodology]] — la metodología de niveles cuyos rankings reales, en esa implementación, impulsan sus propias asignaciones de color del muestrario
