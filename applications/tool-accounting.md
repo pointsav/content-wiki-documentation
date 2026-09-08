@@ -14,7 +14,7 @@ language_protocol: PROSE-TOPIC
 last_edited: 2026-09-07
 editor: pointsav-engineering
 paired_with: tool-accounting.es.md
-short_description: "A flat-file, owner-held double-entry accounting engine producing audit-ready financial statements from plain-text journals; its core engine and PDF/HTML renderer are built, verified against real historical multi-entity data, and driven by a real CLI toolchain of statement, ledger, narrative, and timeline report binaries, plus a construction-industry draw-workbook extension — CLI-only, with no console surface yet."
+short_description: "A flat-file, owner-held double-entry accounting engine producing audit-ready financial statements from plain-text journals; its core engine and PDF/HTML renderer are built, verified against representative multi-entity accounting scenarios, and driven by a real CLI toolchain of statement, ledger, narrative, and timeline report binaries, plus a construction-industry draw-workbook extension — CLI-only, with no console surface yet."
 cites: []
 ---
 
@@ -263,22 +263,22 @@ Every dollar figure in this extension comes from a genuine double-entry money le
 
 `tool-accounting-core` — the shared money, period, and journal-line types, the CSV parser,
 and the chart, ledger, trial-balance, and consolidation logic — is built and has been
-verified against a real historical dataset rather than synthetic fixtures, which
-surfaced and fixed real data-entry defects in the process. `tool-typeset`, the
+verified against representative accounting scenarios rather than synthetic fixtures alone,
+which surfaced and fixed real data-entry defects in the process. `tool-typeset`, the
 zero-dependency PDF and HTML renderer this engine shares with the platform's sibling
 construction tool, is built and independently verified by extracting text back out of a
 rendered PDF and checking it against the source structure. Together they have already run
-one full fiscal year's complete pipeline — journals into a computed ledger, a trial
+one full fiscal-year-scale pipeline — journals into a computed ledger, a trial
 balance folded from it, rendered statements, and rendered narrative — across a
-multi-entity structure, with a second year now in progress. Both crates carry passing
+multi-entity structure, with a second cycle now in progress. Both crates carry passing
 unit-test suites, and the rendered statement packages were structured line for line
 against independently prepared
 professional drafts of the same record — an answer key, not data the reports merely
 reformat.
 
 **Why it matters:** an owner evaluating this platform is not being asked to take the
-design on faith. The components that touch real dollar figures have already been checked
-against a real year of real transactions, not designed on paper alone — which puts
+design on faith. The components that touch dollar figures have already been checked
+against representative transaction scenarios, not designed on paper alone — which puts
 `tool-accounting` further along than any comparable tool elsewhere in the platform's
 ledger-and-statement family.
 

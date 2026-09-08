@@ -14,7 +14,7 @@ language_protocol: TRANSLATE-ES
 last_edited: 2026-09-07
 editor: pointsav-engineering
 paired_with: tool-accounting.md
-short_description: "Motor de contabilidad de partida doble, en archivos planos y de propiedad del titular, que produce estados financieros auditables desde diarios en texto plano; su motor central y su renderizador PDF/HTML están construidos y verificados contra datos históricos reales multi-entidad, operados por binarios CLI de estados, libro mayor, narrativa y línea de tiempo, más una extensión de cuadernos de trabajo de disposiciones para la industria de la construcción — solo CLI, sin consola todavía."
+short_description: "Motor de contabilidad de partida doble, en archivos planos y de propiedad del titular, que produce estados financieros auditables desde diarios en texto plano; su motor central y su renderizador PDF/HTML están construidos y verificados contra escenarios contables representativos multi-entidad, operados por binarios CLI de estados, libro mayor, narrativa y línea de tiempo, más una extensión de cuadernos de trabajo de disposiciones para la industria de la construcción — solo CLI, sin consola todavía."
 cites: []
 ---
 
@@ -288,23 +288,23 @@ Cada cifra en dólares en esta extensión proviene de un ledger de dinero genuin
 
 `tool-accounting-core` reúne los tipos compartidos de dinero, período y línea de diario, el
 analizador de CSV, y la lógica del plan de cuentas, el libro mayor, el balance de
-comprobación y la consolidación. Está construido y ha sido verificado contra un conjunto de
-datos históricos reales en lugar de datos de prueba sintéticos, lo cual sacó a la luz y
-corrigió defectos reales de entrada de datos en el proceso. `tool-typeset`, el
+comprobación y la consolidación. Está construido y ha sido verificado contra escenarios
+contables representativos y no solo contra datos de prueba sintéticos, lo cual sacó a la
+luz y corrigió defectos reales de entrada de datos en el proceso. `tool-typeset`, el
 renderizador de PDF y HTML sin dependencias que este motor comparte con la herramienta
 hermana de construcción de la plataforma, está construido y verificado de forma
 independiente extrayendo texto de un PDF renderizado y comparándolo contra la estructura
-de origen. Juntos, ya han ejecutado el canal completo de un año fiscal entero — diarios
+de origen. Juntos, ya han ejecutado un canal completo a escala de un año fiscal — diarios
 hacia un libro mayor calculado, un balance de comprobación plegado a partir de él, estados
 financieros renderizados, y narrativa renderizada — a través de una estructura
-multi-entidad, con un segundo año ya en curso. Ambos crates cuentan con suites de pruebas
+multi-entidad, con un segundo ciclo ya en curso. Ambos crates cuentan con suites de pruebas
 unitarias que pasan, y los paquetes de estados renderizados se estructuraron línea por
 línea contra borradores profesionales preparados de forma independiente del mismo registro
 — una clave de respuestas, no datos que los informes simplemente reformatean.
 
 **Por qué importa:** a quien evalúa esta plataforma no se le pide confiar en el diseño por
-fe. Los componentes que tocan cifras de dinero real ya han sido verificados contra un año
-real de transacciones reales, no solo diseñados en papel. Eso sitúa a `tool-accounting`
+fe. Los componentes que tocan cifras de dinero ya han sido verificados contra escenarios
+representativos de transacciones, no solo diseñados en papel. Eso sitúa a `tool-accounting`
 más avanzado que cualquier herramienta comparable en el resto de la familia de
 herramientas de libro mayor de la plataforma.
 
